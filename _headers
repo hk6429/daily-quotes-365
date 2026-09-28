@@ -4,3 +4,5 @@
   Cache-Control: public, max-age=31536000, immutable
 /data/*
   Cache-Control: public, max-age=600
+/bg/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -7,7 +7,7 @@ const DONE_KEY = 'dq365.done';
 const loadDone = () => { try { return JSON.parse(localStorage.getItem(DONE_KEY) || '[]'); } catch { return []; } };
 const saveDone = a => { try { localStorage.setItem(DONE_KEY, JSON.stringify(a)); } catch {} };
 
-const state = { scenes: [], id: 1, rate: 1, playing: false, current: null };
+const state = { scenes: [], id: 1, rate: 1, playing: false, resolve: null };
 
 async function main() {
   state.scenes = await (await fetch('data/scenes.json')).json();
@@ -44,8 +44,10 @@ function render() {
     $('.who', li).textContent = `${l.author}・${l.source}${l.era === '西方' ? '（譯句）' : ''}`;
     $('.gloss', li).textContent = l.gloss;
     $('.play', li).onclick = () => { stopAll(); playLine(k + 1); };
-    $('.en', li).onclick = () => li.classList.remove('hide-en');
-    $('.zh', li).onclick = () => { li.classList.remove('hide-en'); li.classList.remove('hide-zh'); };
+    $('.en', li).tabIndex = 0; $('.en', li).setAttribute('role','button');
+    $('.en', li).onclick = $('.en', li).onkeydown = e => { if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return; e.preventDefault(); li.classList.remove('hide-en'); };
+    $('.zh', li).tabIndex = 0; $('.zh', li).setAttribute('role','button');
+    $('.zh', li).onclick = $('.zh', li).onkeydown = e => { if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return; e.preventDefault(); li.classList.remove('hide-en'); li.classList.remove('hide-zh'); };
     ul.appendChild(li);
   });
   $('#prev').disabled = state.id <= 1; $('#next').disabled = state.id >= 365;
@@ -61,14 +63,12 @@ function renderDone() {
   $('#stats').textContent = `已練 ${done.length} 天 · 連續 ${streak} 天`;
 }
 
-function audioFor(k) {
-  const a = new Audio(`audio/${pad(state.id)}-${k}.mp3`);
-  a.playbackRate = state.rate; return a;
-}
+const player = new Audio();
+let session = 0;
 
-function speakFallback(k) {
+function speakFallback(k, sid) {
   return new Promise(res => {
-    if (!('speechSynthesis' in window)) return res();
+    if (!('speechSynthesis' in window) || sid !== session) return res();
     const u = new SpeechSynthesisUtterance(scene().lines[k - 1].text);
     u.lang = 'zh-TW'; u.rate = state.rate; u.onend = res; u.onerror = res;
     speechSynthesis.cancel(); speechSynthesis.speak(u);
@@ -76,23 +76,26 @@ function speakFallback(k) {
 }
 
 function playLine(k) {
+  const sid = ++session;
   const li = $(`.line[data-k="${k}"]`);
   document.querySelectorAll('.line.playing').forEach(e => e.classList.remove('playing'));
   li && li.classList.add('playing');
   return new Promise(res => {
-    const a = audioFor(k);
-    const finish = () => { li && li.classList.remove('playing'); state.current = null; res(); };
-    a.onended = finish;
-    a.onerror = () => speakFallback(k).then(finish);
-    state.current = a;
-    a.play().catch(() => speakFallback(k).then(finish));
+    let done = false;
+    const finish = () => { if (done) return; done = true; li && li.classList.remove('playing'); if (state.resolve === finish) state.resolve = null; res(); };
+    const fallback = () => { if (done || sid !== session) return finish(); speakFallback(k, sid).then(finish); };
+    state.resolve = finish;
+    player.onended = finish; player.onerror = fallback;
+    player.src = `audio/${pad(state.id)}-${k}.mp3`; player.playbackRate = state.rate;
+    player.play().catch(fallback);
   });
 }
 
 function stopAll() {
-  state.playing = false;
-  if (state.current) { state.current.pause(); state.current.src = ''; state.current = null; }
+  state.playing = false; session++;
+  player.onended = null; player.onerror = null; player.pause();
   if ('speechSynthesis' in window) speechSynthesis.cancel();
+  if (state.resolve) { const r = state.resolve; state.resolve = null; r(); }
   document.querySelectorAll('.line.playing').forEach(e => e.classList.remove('playing'));
   $('#playAll').textContent = '▶ 聽全部'; $('#playAll').classList.remove('primary');
 }
@@ -104,7 +107,7 @@ async function playAll() {
     await playLine(k);
     if (state.playing && k < 5) await new Promise(r => setTimeout(r, 1200));
   }
-  stopAll();
+  if (state.playing) stopAll();
 }
 
 function go(id) { history.pushState(null, '', `?d=${id}`); stopAll(); state.id = id; render(); window.scrollTo(0, 0); }
