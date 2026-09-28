@@ -1,0 +1,13 @@
+const s = JSON.parse(require('fs').readFileSync('data/scenes.json','utf8'));
+const errs=[]; if(s.length!==365) errs.push(`count ${s.length}`);
+const titles=new Set(), quotes=new Set();
+const norm=t=>t.replace(/[，。、！？；：「」『』（）,.!?;:'"“”‘’\s—-]/g,'');
+s.forEach((x,i)=>{ if(x.id!==i+1) errs.push(`id ${x.id} at ${i}`);
+ if(!x.category||!x.title_zh||!x.intro_zh||!x.image_prompt_en) errs.push(`fields ${x.id}`);
+ if(titles.has(x.title_zh)) errs.push(`dup title ${x.title_zh}`); titles.add(x.title_zh);
+ if(!Array.isArray(x.lines)||x.lines.length!==5) errs.push(`lines ${x.id}`);
+ (x.lines||[]).forEach((l,k)=>{ for(const f of ['text','author','source','era','gloss']) if(!l[f]) errs.push(`${f} ${x.id}-${k+1}`);
+  const n=norm(l.text||''); if(n.length<5||n.length>44) errs.push(`len ${x.id}-${k+1}(${n.length}): ${l.text}`);
+  if(quotes.has(n)) errs.push(`dup quote ${x.id}-${k+1}: ${l.text}`); quotes.add(n);
+  if((l.gloss||'').length>30) errs.push(`gloss long ${x.id}-${k+1}`); });});
+if(errs.length){console.error(errs.join('\n'));process.exit(1)} console.log('ok 365');

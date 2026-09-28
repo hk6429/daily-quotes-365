@@ -1,0 +1,76 @@
+:root{
+  --paper:#f6f1e7;--paper2:#efe7d8;--ink:#1c1c1c;--ink2:#4a4a4a;--ink3:#8a8378;
+  --cinnabar:#c23a2b;--indigo:#2f4a6d;--ochre:#b8862b;--line:rgba(28,28,28,.14);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);position:relative;color:var(--ink);font:16px/1.6 -apple-system,"PingFang TC","Noto Sans TC",system-ui,sans-serif;
+  background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:6px 6px}
+a{color:var(--indigo)}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 64px}
+header.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:10px}
+header.top h1{font:700 22px/1.2 "Noto Serif TC","Songti TC",serif;margin:0;letter-spacing:.06em}
+header.top h1 span{color:var(--cinnabar)}
+header.top nav a{font-size:14px;margin-left:12px;text-decoration:none}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink3);margin:4px 0 12px}
+.meta .nav button{min-width:44px;min-height:44px;border:1px solid var(--line);background:transparent;border-radius:8px;font-size:18px;color:var(--ink)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.hero{position:relative;aspect-ratio:4/3;background:var(--paper2);overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero.missing::after{content:"墨";position:absolute;inset:0;display:grid;place-items:center;font:700 96px "Noto Serif TC",serif;color:rgba(28,28,28,.12)}
+.title{padding:14px 16px 4px}
+.title .cat{display:inline-block;font-size:12px;color:#fff;background:var(--cinnabar);border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.title h2{margin:0;font:700 24px/1.3 "Noto Serif TC","Songti TC",serif}
+.title .en{color:var(--ink2);font-size:15px}
+.title .scene{color:var(--ink3);font-size:14px;margin:4px 0 0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
+.controls button{min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:15px;cursor:pointer}
+.controls button.primary{background:var(--ink);color:#fff}
+.controls button[aria-pressed="true"]{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.lines{list-style:none;margin:0;padding:4px 8px 12px}
+.line{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:start;padding:8px;border-radius:10px}
+.line.playing{background:var(--paper2)}
+.line .play{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:16px;cursor:pointer}
+.line .spk{font-size:12px;color:var(--ink3);margin-right:6px}
+.line .en,.line .zh{display:block;cursor:pointer}
+.line .en{font-size:18px;line-height:1.45}
+.line .zh{color:var(--ink2);font-size:15px}
+.line.hide-en .en,.line.hide-zh .zh{color:transparent;background:repeating-linear-gradient(90deg,var(--paper2) 0 8px,transparent 8px 12px);border-radius:6px;user-select:none}
+.line.hide-en .en::selection,.line.hide-zh .zh::selection{color:transparent}
+.done{padding:12px 16px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;color:var(--ink3)}
+.done button{min-height:44px;padding:0 16px;border-radius:10px;border:2px solid var(--cinnabar);background:transparent;color:var(--cinnabar);font-weight:700;font-size:15px}
+.done button.is-done{background:var(--cinnabar);color:#fff}
+.hint{font-size:13px;color:var(--ink3);margin:14px 4px}
+footer{margin-top:28px;font-size:12px;color:var(--ink3);text-align:center}
+/* archive */
+.group{margin:18px 0}
+.group h3{font:700 18px "Noto Serif TC",serif;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.grid a{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-decoration:none;color:var(--ink);font-size:14px;min-height:44px}
+.grid a small{display:block;color:var(--ink3);font-size:12px}
+.grid a.is-done{border-color:var(--cinnabar)}
+.grid a.today{background:var(--paper2)}
+
+/* 全版背景 */
+#pageBg{position:fixed;inset:0;z-index:-1;background:var(--paper) center/cover no-repeat;opacity:0;transition:opacity .6s}
+#pageBg.show{opacity:1}
+#pageBg::after{content:"";position:absolute;inset:0;background:rgba(246,241,231,.72)}
+.card{background:rgba(255,255,255,.94)}
+/* archive 圖文卡 */
+.banner{border-radius:14px;background:var(--paper2) center/cover;min-height:110px;display:flex;align-items:flex-end;padding:12px 16px;margin:0 0 10px;box-shadow:inset 0 -60px 60px -30px rgba(246,241,231,.95);border:1px solid var(--line)}
+.banner h3{border:0;padding:0;margin:0;font-size:24px;text-shadow:0 1px 0 #fff,0 0 12px #fff}
+.banner h3 small{display:inline-block;margin-left:10px;font:400 13px sans-serif;color:var(--ink2)}
+.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.grid a{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.grid .thumb{display:block;aspect-ratio:4/3;background:var(--paper2);position:relative}
+.grid .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.grid .thumb.missing::after{content:"墨";position:absolute;inset:0;display:grid;place-items:center;font:700 40px "Noto Serif TC",serif;color:rgba(28,28,28,.15)}
+.grid .txt{display:block;padding:8px 10px 10px}
+.grid .txt b{display:block;font-weight:700;font-size:15px;line-height:1.3}
+.grid .txt i{display:block;font-style:normal;color:var(--ink3);font-size:12px;margin-top:2px}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr);gap:8px}}
+/* 名句版 */
+.line .en{font:700 19px/1.5 "Noto Serif TC","Songti TC",serif;letter-spacing:.02em}
+.line .zh .who{display:block;font-weight:700;color:var(--indigo);font-size:14px}
+.line .zh .gloss{display:block;color:var(--ink2);font-size:14px}
+.line.hide-zh .zh .who,.line.hide-zh .zh .gloss{color:transparent}

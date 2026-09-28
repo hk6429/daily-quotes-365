@@ -1,0 +1,1 @@
+{"name":"daily-quotes-365","private":true,"type":"module","scripts":{"test":"node --test test/day.test.mjs && node scripts/validate.cjs && node scripts/check-assets.cjs","merge":"node scripts/merge-batches.cjs"}}
