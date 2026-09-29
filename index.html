@@ -16,19 +16,25 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%231c1c1c'/%3E%3Ccircle cx='44' cy='20' r='8' fill='%23c23a2b'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" as="fetch" href="data/scenes.json" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="wrap">
   <header class="top">
     <h1>名句<span>日日</span>聽</h1>
-    <nav><a href="archive.html">全部主題</a></nav>
+    <nav><button id="zoom" aria-pressed="false" aria-label="放大文字">A+</button><a href="archive.html">全部主題</a></nav>
   </header>
   <div class="meta">
-    <span id="dayLabel">今天</span>
+    <span id="dayLabel" aria-live="polite">今天</span>
     <span class="nav"><button id="prev" aria-label="前一天">‹</button> <button id="next" aria-label="後一天">›</button></span>
   </div>
+  <details class="howto" id="howto" open>
+    <summary>怎麼練（3 步驟）</summary>
+    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「看原句」對照文字。</li><li>最後按「全部揭曉」看出處與白話解釋，再按「今天練完了」。</li></ol>
+  </details>
   <article class="card">
     <div class="hero" id="hero"><img id="heroImg" alt=""></div>
     <div class="title">
@@ -38,15 +44,15 @@
     </div>
     <div class="controls">
       <button id="playAll">▶ 聽全部</button>
-      <button id="rate" aria-pressed="false">1×</button>
+      <button id="rate" aria-pressed="false">語速 1×</button>
       <button id="showEn">看原句</button>
-      <button id="showZh">看出處＋釋義</button>
+      <button id="showZh">全部揭曉</button>
     </div>
     <ol class="lines" id="lines"></ol>
-    <div class="done"><span id="stats"></span><button id="doneBtn">完成今日</button></div>
+    <div class="done"><span id="stats"></span><button id="doneBtn">今天練完了</button></div>
   </article>
-  <p class="hint">怎麼練：先按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的 → 點單句可重播 → 按「看原句」對照文字 → 最後看出處與白話解釋。點任一句文字也能單獨揭曉。</p>
-  <footer>名句日日聽 · 大乃老師 · 插畫由 AI 生成 · 語音為合成人聲 · 西方名言為通行中譯</footer>
+  <p class="hint">點任一句的灰色條紋，也能單獨揭曉那一句。進度只存在這台裝置的瀏覽器。</p>
+  <footer>名句日日聽 · 大乃老師 · 插畫由 AI 生成 · 語音為合成人聲 · 西方名言為通行中譯或本站自譯 · <a href="rights.html">權利、來源與 AI 揭露</a></footer>
 </div>
 <script type="module" src="js/app.js"></script>
 <script src="js/vendor/gc-config.js"></script>

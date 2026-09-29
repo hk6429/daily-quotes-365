@@ -11,8 +11,11 @@ a{color:var(--indigo)}
 header.top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:10px}
 header.top h1{font:700 22px/1.2 "Noto Serif TC","Songti TC",serif;margin:0;letter-spacing:.06em}
 header.top h1 span{color:var(--cinnabar)}
-header.top nav a{font-size:14px;margin-left:12px;text-decoration:none}
-.meta{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--ink3);margin:4px 0 12px}
+header.top nav{display:flex;align-items:center;gap:6px}
+header.top nav a{font-size:15px;display:inline-flex;align-items:center;min-height:44px;padding:0 6px;text-decoration:none}
+header.top nav button{min-width:44px;min-height:44px;border:1px solid var(--line);background:transparent;border-radius:8px;font-size:15px;font-weight:700;color:var(--ink)}
+header.top nav button[aria-pressed="true"]{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--ink3);margin:4px 0 12px}
 .meta .nav button{min-width:44px;min-height:44px;border:1px solid var(--line);background:transparent;border-radius:8px;font-size:18px;color:var(--ink)}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05)}
 .hero{position:relative;aspect-ratio:4/3;background:var(--paper2);overflow:hidden}
@@ -22,8 +25,8 @@ header.top nav a{font-size:14px;margin-left:12px;text-decoration:none}
 .title .cat{display:inline-block;font-size:12px;color:#fff;background:var(--cinnabar);border-radius:999px;padding:2px 10px;margin-bottom:6px}
 .title h2{margin:0;font:700 24px/1.3 "Noto Serif TC","Songti TC",serif}
 .title .en{color:var(--ink2);font-size:15px}
-.title .scene{color:var(--ink3);font-size:14px;margin:4px 0 0}
-.controls{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
+.title .scene{color:var(--ink3);font-size:15px;margin:4px 0 0}
+.controls{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
 .controls button{min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:15px;cursor:pointer}
 .controls button.primary{background:var(--ink);color:#fff}
 .controls button[aria-pressed="true"]{background:var(--indigo);color:#fff;border-color:var(--indigo)}
@@ -40,11 +43,11 @@ header.top nav a{font-size:14px;margin-left:12px;text-decoration:none}
 .done{padding:12px 16px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;color:var(--ink3)}
 .done button{min-height:44px;padding:0 16px;border-radius:10px;border:2px solid var(--cinnabar);background:transparent;color:var(--cinnabar);font-weight:700;font-size:15px}
 .done button.is-done{background:var(--cinnabar);color:#fff}
-.hint{font-size:13px;color:var(--ink3);margin:14px 4px}
-footer{margin-top:28px;font-size:12px;color:var(--ink3);text-align:center}
+.hint{font-size:15px;color:var(--ink3);margin:14px 4px}
+footer{margin-top:28px;font-size:13px;color:var(--ink3);text-align:center}
 /* archive */
 .group{margin:18px 0}
-.group h3{font:700 18px "Noto Serif TC",serif;margin:0 0 8px}
+.group h2{font:700 18px "Noto Serif TC",serif;margin:0 0 8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .grid a{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-decoration:none;color:var(--ink);font-size:14px;min-height:44px}
 .grid a small{display:block;color:var(--ink3);font-size:12px}
@@ -58,8 +61,8 @@ footer{margin-top:28px;font-size:12px;color:var(--ink3);text-align:center}
 .card{background:rgba(255,255,255,.94)}
 /* archive 圖文卡 */
 .banner{border-radius:14px;background:var(--paper2) center/cover;min-height:110px;display:flex;align-items:flex-end;padding:12px 16px;margin:0 0 10px;box-shadow:inset 0 -60px 60px -30px rgba(246,241,231,.95);border:1px solid var(--line)}
-.banner h3{border:0;padding:0;margin:0;font-size:24px;text-shadow:0 1px 0 #fff,0 0 12px #fff}
-.banner h3 small{display:inline-block;margin-left:10px;font:400 13px sans-serif;color:var(--ink2)}
+.banner h2{border:0;padding:0;margin:0;font-size:24px;text-shadow:0 1px 0 #fff,0 0 12px #fff}
+.banner h2 small{display:inline-block;margin-left:10px;font:400 13px sans-serif;color:var(--ink2)}
 .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
 .grid a{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .grid .thumb{display:block;aspect-ratio:4/3;background:var(--paper2);position:relative}
@@ -71,6 +74,18 @@ footer{margin-top:28px;font-size:12px;color:var(--ink3);text-align:center}
 @media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr);gap:8px}}
 /* 名句版 */
 .line .en{font:700 19px/1.5 "Noto Serif TC","Songti TC",serif;letter-spacing:.02em}
-.line .zh .who{display:block;font-weight:700;color:var(--indigo);font-size:14px}
-.line .zh .gloss{display:block;color:var(--ink2);font-size:14px}
+.line .zh .who{display:block;font-weight:700;color:var(--indigo);font-size:16px}
+.line .zh .gloss{display:block;color:var(--ink2);font-size:16px;line-height:1.6}
 .line.hide-zh .zh .who,.line.hide-zh .zh .gloss{color:transparent}
+
+/* 首次說明、手機首屏、放大字級 */
+.howto{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;margin:0 0 12px;padding:0 14px;font-size:15px;color:var(--ink2)}
+.howto summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--ink)}
+.howto ol{margin:0 0 12px;padding-left:20px}
+.controls button:focus-visible,.line .en:focus-visible,.line .zh:focus-visible,.line .play:focus-visible,header.top nav a:focus-visible,.meta .nav button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+@media(min-width:520px){.controls{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:480px){.hero{aspect-ratio:16/9}}
+.big .line .en{font-size:25px}
+.big .line .zh .who,.big .line .zh .gloss{font-size:20px}
+.big .title .scene,.big .howto,.big .hint{font-size:18px}
+.big .controls button,.big .done button{font-size:18px}
