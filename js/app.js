@@ -1,5 +1,6 @@
 import { todayIndex, parseDay, taipeiDateKey } from './day.js';
 import { bgFor, setPageBg } from './cats.js';
+import { buildQuiz } from './quiz.js';
 
 const $ = (s, r = document) => r.querySelector(s);
 const pad = n => String(n).padStart(3, '0');
@@ -67,6 +68,8 @@ function render() {
     ul.appendChild(li);
   });
   state.touched = false;
+  closeQuiz();
+  $('#quizBtn').hidden = buildQuiz(state.scenes, state.id).length === 0;
   $('#prev').disabled = state.id <= 1; $('#next').disabled = state.id >= 365;
   renderDone();
 }
@@ -155,3 +158,78 @@ main().catch(e => {
   const b = document.createElement('button'); b.textContent = '重試'; b.onclick = () => location.reload();
   $('#scene').textContent = ''; $('#scene').append(b); console.error(e);
 });
+
+// ── 猜作者小測驗 ──
+const QUIZ_KEY = 'dq365.quiz';
+const quizBest = () => { try { const o = JSON.parse(lsGet(QUIZ_KEY) || '{}'); return o && typeof o === 'object' ? o : {}; } catch { return {}; } };
+const saveQuizBest = n => { const o = quizBest(); const k = taipeiDateKey(); o[k] = Math.max(o[k] || 0, n); lsSet(QUIZ_KEY, JSON.stringify(o)); };
+const quiz = { qs: [], i: 0, score: 0 };
+
+function closeQuiz() {
+  const box = $('#quiz'); if (!box) return;
+  box.hidden = true; box.innerHTML = '';
+  $('#lines').hidden = false;
+  $('#quizBtn').setAttribute('aria-expanded', 'false');
+}
+
+function openQuiz() {
+  quiz.qs = buildQuiz(state.scenes, state.id); quiz.i = 0; quiz.score = 0;
+  stopAll(); state.touched = true;
+  $('#lines').hidden = true; $('#quiz').hidden = false;
+  $('#quizBtn').setAttribute('aria-expanded', 'true');
+  showQuestion();
+}
+
+function showQuestion() {
+  const box = $('#quiz'); const q = quiz.qs[quiz.i]; box.innerHTML = '';
+  const h = document.createElement('div'); h.className = 'q-head';
+  h.textContent = `第 ${quiz.i + 1} / ${quiz.qs.length} 題　答對 ${quiz.score}`;
+  const play = document.createElement('button'); play.className = 'q-play'; play.textContent = '▶ 聽這句';
+  play.onclick = () => { stopAll(); playLine(q.k); };
+  const t = document.createElement('p'); t.className = 'q-text'; t.textContent = q.text;
+  const ask = document.createElement('p'); ask.className = 'q-ask'; ask.textContent = '這句話出自誰？';
+  const opts = document.createElement('div'); opts.className = 'q-opts';
+  const fb = document.createElement('div'); fb.className = 'q-fb'; fb.setAttribute('aria-live', 'polite');
+  q.options.forEach((name, n) => {
+    const b = document.createElement('button'); b.textContent = name;
+    b.onclick = () => {
+      opts.querySelectorAll('button').forEach(x => x.disabled = true);
+      const ok = n === q.answer; if (ok) quiz.score++;
+      b.classList.add(ok ? 'right' : 'wrong'); opts.children[q.answer].classList.add('right');
+      fb.innerHTML = '';
+      const r = document.createElement('p'); r.className = 'q-res'; r.textContent = ok ? '答對了！' : `答案是 ${q.options[q.answer]}`;
+      const w = document.createElement('p'); w.className = 'q-who'; w.textContent = `${q.author === '佚名' ? '' : q.author + '・'}${q.source}`;
+      const g = document.createElement('p'); g.className = 'q-gloss'; g.textContent = q.gloss;
+      const nx = document.createElement('button'); nx.className = 'q-next';
+      nx.textContent = quiz.i + 1 < quiz.qs.length ? '下一題' : '看成績';
+      nx.onclick = () => { quiz.i++; quiz.i < quiz.qs.length ? showQuestion() : showResult(); };
+      fb.append(r, w, g, nx); nx.focus();
+    };
+    opts.appendChild(b);
+  });
+  box.append(h, play, t, ask, opts, fb);
+}
+
+function showResult() {
+  saveQuizBest(quiz.score);
+  const box = $('#quiz'); box.innerHTML = '';
+  const n = quiz.qs.length; const best = quizBest()[taipeiDateKey()] || quiz.score;
+  const h = document.createElement('p'); h.className = 'q-score'; h.textContent = `答對 ${quiz.score} / ${n}`;
+  const s = document.createElement('p'); s.className = 'q-gloss'; s.textContent = `今日最佳 ${best} / ${n}${quiz.score === n ? '　全對！' : ''}`;
+  const again = document.createElement('button'); again.textContent = '再玩一次'; again.onclick = openQuiz;
+  const back = document.createElement('button'); back.className = 'q-next'; back.textContent = '回到練習'; back.onclick = closeQuiz;
+  box.append(h, s, again, back); back.focus();
+}
+
+$('#quizBtn').onclick = () => ($('#quiz').hidden ? openQuiz() : closeQuiz());
+
+// ── 離線：註冊 Service Worker，並預載目前這天的 5 句音檔與圖 ──
+function prefetchDay() {
+  if (!navigator.onLine) return;
+  const id = pad(state.id);
+  const urls = [`img/${id}.webp`, ...[1, 2, 3, 4, 5].map(k => `audio/${id}-${k}.mp3?v=2`)];
+  (window.requestIdleCallback || setTimeout)(() => urls.forEach(u => fetch(u).catch(() => {})));
+}
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').then(() => navigator.serviceWorker.ready).then(prefetchDay).catch(() => {});
+}

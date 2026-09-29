@@ -89,3 +89,28 @@ footer{margin-top:28px;font-size:13px;color:var(--ink3);text-align:center}
 .big .line .zh .who,.big .line .zh .gloss{font-size:20px}
 .big .title .scene,.big .howto,.big .hint{font-size:18px}
 .big .controls button,.big .done button{font-size:18px}
+
+/* 猜作者小測驗 */
+.controls .wide{grid-column:1/-1}
+.controls button[hidden]{display:none}
+.quiz{padding:12px 16px 16px;border-top:1px solid var(--line)}
+.quiz[hidden],.lines[hidden]{display:none}
+.quiz button{min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;cursor:pointer}
+.quiz button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.q-head{font-size:14px;color:var(--ink3);margin-bottom:8px}
+.q-text{font:700 21px/1.5 "Noto Serif TC","Songti TC",serif;margin:12px 0 6px}
+.q-ask{color:var(--ink2);margin:0 0 8px}
+.q-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.q-opts button{font-size:17px}
+.q-opts button.right{background:#2e7d4f;color:#fff;border-color:#2e7d4f}
+.q-opts button.wrong{background:var(--cinnabar);color:#fff;border-color:var(--cinnabar)}
+.q-opts button:disabled{cursor:default}
+.q-fb{margin-top:12px}
+.q-res{font-weight:700;margin:0 0 4px}
+.q-who{color:var(--indigo);font-weight:700;margin:0}
+.q-gloss{color:var(--ink2);margin:2px 0 10px}
+.q-next{background:var(--ink)!important;color:#fff!important}
+.q-score{font:700 28px "Noto Serif TC",serif;margin:8px 0}
+.q-score+.q-gloss+button{margin-right:8px}
+.big .q-text{font-size:26px}.big .q-opts button{font-size:20px}.big .q-gloss,.big .q-who{font-size:18px}
+@media(max-width:360px){.q-opts{grid-template-columns:1fr}}

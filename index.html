@@ -33,7 +33,7 @@
   </div>
   <details class="howto" id="howto" open>
     <summary>怎麼練（3 步驟）</summary>
-    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「看原句」對照文字。</li><li>最後按「全部揭曉」看出處與白話解釋，再按「今天練完了」。</li></ol>
+    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「看原句」對照文字。</li><li>最後按「全部揭曉」看出處與白話解釋，再按「今天練完了」。</li><li>想考自己？按「猜作者小測驗」，每句四選一。</li></ol>
   </details>
   <article class="card">
     <div class="hero" id="hero"><img id="heroImg" alt=""></div>
@@ -47,7 +47,9 @@
       <button id="rate" aria-pressed="false">語速 1×</button>
       <button id="showEn">看原句</button>
       <button id="showZh">全部揭曉</button>
+      <button id="quizBtn" class="wide" hidden>猜作者小測驗</button>
     </div>
+    <section id="quiz" class="quiz" hidden aria-label="猜作者小測驗"></section>
     <ol class="lines" id="lines"></ol>
     <div class="done"><span id="stats"></span><button id="doneBtn">今天練完了</button></div>
   </article>
