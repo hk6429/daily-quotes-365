@@ -105,7 +105,7 @@ function playLine(k) {
     const fallback = () => { if (fell) return; fell = true; if (done || sid !== session) return finish(); speakFallback(k, sid).then(finish); };
     state.resolve = finish;
     player.onended = finish; player.onerror = fallback;
-    player.src = `audio/${pad(state.id)}-${k}.mp3`; player.playbackRate = state.rate;
+    player.src = `audio/${pad(state.id)}-${k}.mp3?v=2`; player.playbackRate = state.rate;
     player.play().catch(fallback);
   });
 }
