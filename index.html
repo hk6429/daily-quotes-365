@@ -32,7 +32,7 @@
   </div>
   <details class="howto" id="howto" open>
     <summary>怎麼練（4 步驟）</summary>
-    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「顯示文字」對照原句。</li><li>再按「顯示出處與白話」看出處與解釋，再按「今天練完了」。</li><li>想考自己？按「每日小測驗」，猜作者或猜意思，每句四選一。</li></ol>
+    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「顯示文字」對照原句。</li><li>再按「顯示出處與白話」看出處與解釋，再按「今天練完了」。</li><li>想考自己？按「每日小測驗」，猜作者或猜意思，每句四選一。老師投影請按「課堂模式」。</li></ol>
   </details>
   <article class="card">
     <div class="hero" id="hero"><img id="heroImg" alt=""></div>
@@ -47,6 +47,7 @@
       <button id="showEn">顯示文字</button>
       <button id="showZh">顯示出處與白話</button>
       <button id="quizBtn" class="wide" aria-expanded="false">每日小測驗</button>
+      <button id="stageBtn" class="wide">課堂模式（投影大字）</button>
     </div>
     <section id="quiz" class="quiz" hidden aria-label="每日小測驗"></section>
     <ol class="lines" id="lines"></ol>
@@ -54,6 +55,13 @@
   </article>
   <p class="hint">點任一句的灰色條紋，也能單獨揭曉那一句。進度只存在這台裝置的瀏覽器。</p>
   <footer>名句日日聽 · 大乃老師 · 插畫由 AI 生成 · 語音為合成人聲 · 無廣告、無登入、不收個資 · 名言出處盡力查證，中文為本站自譯（AI 輔助）或通行短句直譯 · <a href="rights.html">權利、來源與 AI 揭露</a></footer>
+</div>
+<div id="stage" class="stage" role="dialog" aria-modal="true" aria-label="課堂模式" tabindex="-1" hidden>
+  <div class="st-top"><span id="stInfo"></span><span class="st-keys">空白／→ 下一步　← 上一步　P 重播　Esc 離開</span></div>
+  <div class="st-body" id="stBody" aria-live="polite"></div>
+  <div class="st-bar">
+    <button id="stPrev">← 上一步</button><button id="stPlay">▶ 重播</button><button id="stNext">下一步 →</button><button id="stExit">✕ 離開</button>
+  </div>
 </div>
 <script type="module" src="js/app.js"></script>
 <script src="js/vendor/gc-config.js"></script>

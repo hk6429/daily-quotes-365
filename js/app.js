@@ -235,6 +235,63 @@ function showResult() {
 
 $('#quizBtn').onclick = () => ($('#quiz').hidden ? openQuiz() : closeQuiz(true));
 
+// ── 課堂模式：全螢幕大字，每句依序「聽 → 原句 → 出處 → 白話」，空白鍵／點一下往下一步 ──
+const stage = { k: 1, step: 0, open: false };
+const stageEnd = () => stage.k > 5;
+
+function stageRender() {
+  const body = $('#stBody'); body.innerHTML = '';
+  const x = scene();
+  $('#stInfo').textContent = `${x.title_zh}　第 ${state.id} 天` + (stageEnd() ? '' : `　第 ${stage.k} / 5 句`);
+  if (stageEnd()) {
+    body.append(el('p', 'st-text', '今天 5 句完成'), el('p', 'st-hint', '空白鍵重來，Esc 離開'));
+    state.touched = true; return;
+  }
+  const l = x.lines[stage.k - 1];
+  if (stage.step === 0) body.append(el('p', 'st-q', '？'), el('p', 'st-hint', '先聽，猜猜是誰說的（空白鍵揭曉原句）'));
+  else {
+    body.append(el('p', 'st-text', l.text));
+    if (stage.step >= 2) body.append(el('p', 'st-who', `${l.author === '佚名' ? '' : l.author + '・'}${l.source}`));
+    if (stage.step >= 3) body.append(el('p', 'st-gloss', l.gloss));
+  }
+  if (stage.step === 0) { stopAll(); playLine(stage.k); }
+}
+
+function stageNext() {
+  if (stageEnd()) { stage.k = 1; stage.step = 0; }
+  else if (stage.step < 3) stage.step++;
+  else { stage.k++; stage.step = 0; }
+  stageRender();
+}
+function stagePrev() {
+  if (stageEnd()) { stage.k = 5; stage.step = 3; }
+  else if (stage.step > 0) stage.step--;
+  else if (stage.k > 1) { stage.k--; stage.step = 3; }
+  stageRender();
+}
+function stageOpen() {
+  stopAll(); closeQuiz(); stage.k = 1; stage.step = 0; stage.open = true;
+  $('#stage').hidden = false; $('#stage').focus();
+  const r = document.documentElement.requestFullscreen; if (r) r.call(document.documentElement).catch(() => {});
+  stageRender();
+}
+function stageClose() {
+  stopAll(); stage.open = false; $('#stage').hidden = true;
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  $('#stageBtn').focus();
+}
+$('#stageBtn').onclick = stageOpen;
+$('#stNext').onclick = stageNext; $('#stPrev').onclick = stagePrev; $('#stExit').onclick = stageClose;
+$('#stPlay').onclick = () => { if (!stageEnd()) { stopAll(); playLine(stage.k); } };
+$('#stBody').onclick = stageNext;
+document.addEventListener('keydown', e => {
+  if (!stage.open || e.ctrlKey || e.metaKey || e.altKey) return;
+  const onBtn = e.target.tagName === 'BUTTON' && (e.key === ' ' || e.key === 'Enter'); // 按鈕自己的鍵盤啟動不攔
+  if (onBtn) return;
+  const map = { ' ': stageNext, ArrowRight: stageNext, ArrowLeft: stagePrev, Escape: stageClose, p: () => $('#stPlay').click(), P: () => $('#stPlay').click() };
+  if (map[e.key]) { e.preventDefault(); map[e.key](); }
+});
+
 // ── 離線：註冊 Service Worker，並預載目前這天與隔天的圖與 5 句音檔 ──
 function prefetchDay() {
   if (!navigator.onLine || !navigator.serviceWorker || !navigator.serviceWorker.controller) return;
