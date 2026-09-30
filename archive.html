@@ -21,31 +21,7 @@
   <div id="groups"></div>
   <footer><a href="rights.html">權利、來源與 AI 揭露</a></footer>
 </div>
-<script type="module">
-import { todayIndex } from './js/day.js';
-import { bgFor, setPageBg } from './js/cats.js';
-setPageBg('bg/generic.webp');
-const scenes = await (await fetch('data/scenes.json')).json();
-const today = todayIndex();
-const groups = new Map();
-for (const x of scenes) { if (!groups.has(x.category)) groups.set(x.category, []); groups.get(x.category).push(x); }
-const root = document.getElementById('groups');
-for (const [cat, list] of groups) {
-  const g = document.createElement('section'); g.className = 'group';
-  g.innerHTML = `<div class="banner"><h2>${cat}<small>${list.length} 個主題</small></h2></div><div class="grid"></div>`;
-  g.querySelector('.banner').style.backgroundImage = `url("${bgFor(cat)}")`;
-  const grid = g.querySelector('.grid');
-  for (const x of list) {
-    const a = document.createElement('a'); a.href = `./?d=${x.id}`;
-    a.className = x.id === today ? 'today' : '';
-    const id3 = String(x.id).padStart(3, '0');
-    a.innerHTML = `<span class="thumb"><img loading="lazy" alt="" src="img/t/${id3}.webp" onerror="this.parentNode.classList.add('missing');this.remove()"></span><span class="txt"><small>第 ${x.id} 天</small><b></b><i></i></span>`;
-    a.querySelector('b').textContent = x.title_zh; a.querySelector('i').textContent = x.lines[0].author + ' 等';
-    grid.appendChild(a);
-  }
-  root.appendChild(g);
-}
-</script>
+<script type="module" src="js/archive.js"></script>
 <script src="js/vendor/gc-config.js"></script>
 <script async src="js/vendor/count.js"></script>
 </body>

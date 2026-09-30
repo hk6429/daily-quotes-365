@@ -102,6 +102,8 @@ footer{margin-top:28px;font-size:13px;color:var(--ink3);text-align:center}
 .q-ask{color:var(--ink2);margin:0 0 8px}
 .q-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .q-opts button{font-size:17px}
+.q-opts.long{grid-template-columns:1fr}.q-opts.long button{height:auto;padding:10px 14px;text-align:left;line-height:1.5}
+.q-text:focus,.q-score:focus{outline:none}
 .q-opts button.right{background:#2e7d4f;color:#fff;border-color:#2e7d4f}
 .q-opts button.wrong{background:var(--cinnabar);color:#fff;border-color:var(--cinnabar)}
 .q-opts button:disabled{cursor:default}

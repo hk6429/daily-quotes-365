@@ -2,6 +2,9 @@ import { todayIndex, parseDay, taipeiDateKey } from './day.js';
 import { bgFor, setPageBg } from './cats.js';
 import { buildQuiz } from './quiz.js';
 
+// Google Fonts 標題字型：非阻塞載入（不用 inline 事件，才能上 CSP）
+{ const f = document.createElement('link'); f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap'; document.head.append(f); }
+
 const $ = (s, r = document) => r.querySelector(s);
 const pad = n => String(n).padStart(3, '0');
 const DONE_KEY = 'dq365.done';
@@ -69,9 +72,9 @@ function render() {
   });
   state.touched = false;
   closeQuiz();
-  $('#quizBtn').hidden = buildQuiz(state.scenes, state.id).length === 0;
   $('#prev').disabled = state.id <= 1; $('#next').disabled = state.id >= 365;
   renderDone();
+  prefetchDay();
 }
 
 function renderDone() {
@@ -159,77 +162,86 @@ main().catch(e => {
   $('#scene').textContent = ''; $('#scene').append(b); console.error(e);
 });
 
-// ── 猜作者小測驗 ──
+// ── 每日小測驗（猜作者／猜意思） ──
 const QUIZ_KEY = 'dq365.quiz';
-const quizBest = () => { try { const o = JSON.parse(lsGet(QUIZ_KEY) || '{}'); return o && typeof o === 'object' ? o : {}; } catch { return {}; } };
-const saveQuizBest = n => { const o = quizBest(); const k = taipeiDateKey(); o[k] = Math.max(o[k] || 0, n); lsSet(QUIZ_KEY, JSON.stringify(o)); };
+const quizBest = () => { try { const o = JSON.parse(lsGet(QUIZ_KEY) || '{}'); return o && typeof o === 'object' && !Array.isArray(o) ? o : {}; } catch { return {}; } };
+const saveQuizBest = (id, n) => { const o = quizBest(); o[id] = { s: Math.max(Number(o[id] && o[id].s) || 0, n), n: quiz.qs.length }; lsSet(QUIZ_KEY, JSON.stringify(o)); };
 const quiz = { qs: [], i: 0, score: 0 };
+const QUIZ_BTN = '每日小測驗';
 
-function closeQuiz() {
+function closeQuiz(refocus) {
   const box = $('#quiz'); if (!box) return;
   box.hidden = true; box.innerHTML = '';
   $('#lines').hidden = false;
-  $('#quizBtn').setAttribute('aria-expanded', 'false');
+  const btn = $('#quizBtn'); btn.setAttribute('aria-expanded', 'false'); btn.textContent = QUIZ_BTN;
+  if (refocus) btn.focus();
 }
 
 function openQuiz() {
   quiz.qs = buildQuiz(state.scenes, state.id); quiz.i = 0; quiz.score = 0;
   stopAll(); state.touched = true;
   $('#lines').hidden = true; $('#quiz').hidden = false;
-  $('#quizBtn').setAttribute('aria-expanded', 'true');
+  const btn = $('#quizBtn'); btn.setAttribute('aria-expanded', 'true'); btn.textContent = '結束測驗';
   showQuestion();
 }
 
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
+
 function showQuestion() {
+  stopAll();
   const box = $('#quiz'); const q = quiz.qs[quiz.i]; box.innerHTML = '';
-  const h = document.createElement('div'); h.className = 'q-head';
-  h.textContent = `第 ${quiz.i + 1} / ${quiz.qs.length} 題　答對 ${quiz.score}`;
-  const play = document.createElement('button'); play.className = 'q-play'; play.textContent = '▶ 聽這句';
+  box.style.pointerEvents = 'none'; setTimeout(() => { box.style.pointerEvents = ''; }, 350); // 防雙擊「下一題」誤答新題
+  const isAuthor = q.type === 'author';
+  const h = el('div', 'q-head', `第 ${quiz.i + 1} / ${quiz.qs.length} 題　答對 ${quiz.score}`);
+  const play = el('button', 'q-play', '▶ 聽這句');
   play.onclick = () => { stopAll(); playLine(q.k); };
-  const t = document.createElement('p'); t.className = 'q-text'; t.textContent = q.text;
-  const ask = document.createElement('p'); ask.className = 'q-ask'; ask.textContent = '這句話出自誰？';
-  const opts = document.createElement('div'); opts.className = 'q-opts';
-  const fb = document.createElement('div'); fb.className = 'q-fb'; fb.setAttribute('aria-live', 'polite');
+  const t = el('p', 'q-text', q.text); t.tabIndex = -1;
+  const ask = el('p', 'q-ask', isAuthor ? `這句話出自誰？（時代：${q.era}）` : '這句話是什麼意思？');
+  const opts = el('div', isAuthor ? 'q-opts' : 'q-opts long');
+  const fb = el('div', 'q-fb'); fb.setAttribute('role', 'status');
   q.options.forEach((name, n) => {
-    const b = document.createElement('button'); b.textContent = name;
+    const b = el('button', '', name);
     b.onclick = () => {
       opts.querySelectorAll('button').forEach(x => x.disabled = true);
       const ok = n === q.answer; if (ok) quiz.score++;
-      b.classList.add(ok ? 'right' : 'wrong'); opts.children[q.answer].classList.add('right');
-      fb.innerHTML = '';
-      const r = document.createElement('p'); r.className = 'q-res'; r.textContent = ok ? '答對了！' : `答案是 ${q.options[q.answer]}`;
-      const w = document.createElement('p'); w.className = 'q-who'; w.textContent = `${q.author === '佚名' ? '' : q.author + '・'}${q.source}`;
-      const g = document.createElement('p'); g.className = 'q-gloss'; g.textContent = q.gloss;
-      const nx = document.createElement('button'); nx.className = 'q-next';
-      nx.textContent = quiz.i + 1 < quiz.qs.length ? '下一題' : '看成績';
+      const right = opts.children[q.answer];
+      b.classList.add(ok ? 'right' : 'wrong'); right.classList.add('right');
+      b.textContent = `${ok ? '✓' : '✗'} ${name}`; if (!ok) right.textContent = `✓ ${right.textContent}`;
+      const r = el('p', 'q-res', ok ? '答對了！' : isAuthor ? `差一點！答案是 ${q.options[q.answer]}` : '差一點！正確意思已標成綠色');
+      const w = el('p', 'q-who', `${q.author === '佚名' ? '' : q.author + '・'}${q.source}`);
+      const nx = el('button', 'q-next', quiz.i + 1 < quiz.qs.length ? '下一題' : '看成績');
       nx.onclick = () => { quiz.i++; quiz.i < quiz.qs.length ? showQuestion() : showResult(); };
-      fb.append(r, w, g, nx); nx.focus();
+      fb.append(r, w, ...(isAuthor ? [el('p', 'q-gloss', q.gloss)] : []), nx);
+      setTimeout(() => nx.focus(), 400); // 稍後再移焦點，讓螢幕閱讀器先念完結果
     };
     opts.appendChild(b);
   });
   box.append(h, play, t, ask, opts, fb);
+  t.focus({ preventScroll: true });
 }
 
 function showResult() {
-  saveQuizBest(quiz.score);
+  stopAll();
+  saveQuizBest(state.id, quiz.score);
   const box = $('#quiz'); box.innerHTML = '';
-  const n = quiz.qs.length; const best = quizBest()[taipeiDateKey()] || quiz.score;
-  const h = document.createElement('p'); h.className = 'q-score'; h.textContent = `答對 ${quiz.score} / ${n}`;
-  const s = document.createElement('p'); s.className = 'q-gloss'; s.textContent = `今日最佳 ${best} / ${n}${quiz.score === n ? '　全對！' : ''}`;
-  const again = document.createElement('button'); again.textContent = '再玩一次'; again.onclick = openQuiz;
-  const back = document.createElement('button'); back.className = 'q-next'; back.textContent = '回到練習'; back.onclick = closeQuiz;
-  box.append(h, s, again, back); back.focus();
+  const n = quiz.qs.length; const best = quizBest()[state.id].s;
+  const cheer = quiz.score === n ? '全對！' : quiz.score >= n - 2 ? '很不錯，再玩一次就全對。' : '再聽一次就會了，加油。';
+  const h = el('p', 'q-score', `答對 ${quiz.score} / ${n}`); h.tabIndex = -1;
+  const s = el('p', 'q-gloss', `這一天的最佳成績 ${best} / ${n}　${cheer}`);
+  const again = el('button', '', '再玩一次'); again.onclick = openQuiz;
+  const back = el('button', 'q-next', '回到練習'); back.onclick = () => closeQuiz(true);
+  box.append(h, s, again, back); h.focus({ preventScroll: true });
 }
 
-$('#quizBtn').onclick = () => ($('#quiz').hidden ? openQuiz() : closeQuiz());
+$('#quizBtn').onclick = () => ($('#quiz').hidden ? openQuiz() : closeQuiz(true));
 
-// ── 離線：註冊 Service Worker，並預載目前這天的 5 句音檔與圖 ──
+// ── 離線：註冊 Service Worker，並預載目前這天與隔天的圖與 5 句音檔 ──
 function prefetchDay() {
-  if (!navigator.onLine) return;
-  const id = pad(state.id);
-  const urls = [`img/${id}.webp`, ...[1, 2, 3, 4, 5].map(k => `audio/${id}-${k}.mp3?v=2`)];
+  if (!navigator.onLine || !navigator.serviceWorker || !navigator.serviceWorker.controller) return;
+  const urls = [state.id, state.id + 1].filter(i => i <= 365).flatMap(i => [`img/${pad(i)}.webp`, ...[1, 2, 3, 4, 5].map(k => `audio/${pad(i)}-${k}.mp3?v=2`)]);
   (window.requestIdleCallback || setTimeout)(() => urls.forEach(u => fetch(u).catch(() => {})));
 }
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').then(() => navigator.serviceWorker.ready).then(prefetchDay).catch(() => {});
+  navigator.serviceWorker.addEventListener('controllerchange', prefetchDay);
 }
