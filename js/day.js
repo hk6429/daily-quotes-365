@@ -19,3 +19,14 @@ export function parseDay(qs) {
   const n = Number(m[1]);
   return n >= 1 && n <= 365 ? n : null;
 }
+// 兩個 YYYY-MM-DD 相差天數（b - a）
+export function daysBetween(a, b) {
+  const p = s => { const [y, m, d] = s.split('-').map(Number); return Date.UTC(y, m - 1, d); };
+  return Math.round((p(b) - p(a)) / 86400000);
+}
+
+export function shiftDateKey(key, days) {
+  const [y, m, d] = key.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d + days));
+  return t.toISOString().slice(0, 10);
+}

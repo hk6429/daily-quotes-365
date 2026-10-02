@@ -1,7 +1,7 @@
 // 離線：網頁殼＋資料 network-first（4 秒沒回就先用快取，慢回應仍會更新快取）；圖／音檔 cache-first（檔名帶 ?v= 破快取）。
 // 只快取白名單內的頁殼與資料，且一律存「乾淨」回應（去掉 redirected 標記，否則離線導覽會失敗）。
-const V = 'dq365-v2', M = 'dq365-media';
-const SHELL = ['/', '/archive', '/rights', '/css/style.css', '/js/app.js', '/js/day.js', '/js/cats.js', '/js/quiz.js', '/js/archive.js', '/js/vendor/gc-config.js', '/js/vendor/count.js', '/data/scenes.json'];
+const V = 'dq365-v3', M = 'dq365-media';
+const SHELL = ['/', '/archive', '/rights', '/css/style.css', '/js/app.js', '/js/day.js', '/js/cats.js', '/js/quiz.js', '/js/archive.js', '/js/progress.js', '/js/mission.js', '/js/share.js', '/js/vendor/gc-config.js', '/js/vendor/count.js', '/data/scenes.json'];
 const CORE = ['/', '/css/style.css', '/js/app.js', '/data/scenes.json'];
 const MAX_MEDIA = 400;
 

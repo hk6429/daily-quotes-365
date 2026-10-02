@@ -31,11 +31,11 @@
     <span class="nav"><button id="prev" aria-label="前一天">‹</button> <button id="next" aria-label="後一天">›</button></span>
   </div>
   <details class="howto" id="howto" open>
-    <summary>怎麼練（4 步驟）</summary>
-    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「顯示文字」對照原句。</li><li>再按「顯示出處與白話」看出處與解釋，再按「今天練完了」。</li><li>想考自己？按「每日小測驗」，猜作者或猜意思，每句四選一。老師投影請按「課堂模式」。</li></ol>
+    <summary>怎麼練（5 步驟）</summary>
+    <ol><li>按「聽全部」用耳朵聽 2–3 次，猜猜是誰說的。</li><li>點單句 ▶ 可重播，按「顯示文字」對照原句。</li><li>再按「顯示出處與白話」看出處與解釋，再按「完成這一課」。</li><li>想考自己？按「每日小測驗」，猜作者或猜意思，每句四選一。老師投影請按「課堂模式」。</li><li>想背起來？挑戰「今日口說任務」四關：從看字跟念一路練到不看字背出來，全過也算完成這一課。</li></ol>
   </details>
   <article class="card">
-    <div class="hero" id="hero"><img id="heroImg" alt=""></div>
+    <div class="hero" id="hero"><img id="heroImg" alt=""><span id="stamp" class="stamp" aria-hidden="true">完成</span><span id="stampSay" class="stamp say" aria-hidden="true">說</span></div>
     <div class="title">
       <span class="cat" id="cat"></span>
       <h2 id="titleZh">載入中…</h2>
@@ -51,7 +51,12 @@
     </div>
     <section id="quiz" class="quiz" hidden aria-label="每日小測驗"></section>
     <ol class="lines" id="lines"></ol>
-    <div class="done"><span id="stats"></span><button id="doneBtn">今天練完了</button></div>
+    <div class="quiz-bar mission-bar"><button id="missionBtn" type="button" aria-expanded="false">今日口說任務（四關背誦）</button></div>
+    <section id="mission" class="mission" hidden aria-label="今日口說任務"></section>
+    <div class="done"><span id="stats"></span><button id="doneBtn" type="button">完成這一課</button></div>
+    <p id="missed" class="hint-inline missed" hidden></p>
+    <div id="badges" class="badges" hidden></div>
+    <div class="quiz-bar share-bar"><button id="shareBtn" type="button" hidden>分享今日成果卡</button></div>
   </article>
   <p class="hint">點任一句的灰色條紋，也能單獨揭曉那一句。進度只存在這台裝置的瀏覽器。</p>
   <footer>名句日日聽 · 大乃老師 · 插畫由 AI 生成 · 語音為合成人聲 · 無廣告、無登入、不收個資 · 名言出處盡力查證，中文為本站自譯（AI 輔助）或通行短句直譯 · <a href="rights.html">權利、來源與 AI 揭露</a></footer>
