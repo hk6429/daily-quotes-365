@@ -4,6 +4,7 @@ import { buildQuiz } from './quiz.js';
 import { loadDone, markDone, doneDate, isDoneToday, streakInfo, practicedDays, earnedBadges, nextBadge, loadVoice, addVoice } from './progress.js';
 import { STAGES, plan, total, initial, advance, needsAudio, progress, loadMission, saveMission } from './mission.js';
 import { shareCard } from './share.js';
+import { AUDIO_VERSION, FALLBACK_RATE, audioUrl, readingText, taiwanMaleVoice } from './audio-config.js';
 
 // Google Fonts 標題字型：非阻塞載入（不用 inline 事件，才能上 CSP）
 { const f = document.createElement('link'); f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap'; document.head.append(f); }
@@ -15,10 +16,13 @@ const BIG_KEY = 'dq365.big', SEEN_KEY = 'dq365.seen';
 const lsGet = k => { try { return localStorage.getItem(k); } catch { return null; } };
 const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
 
-const state = { scenes: [], id: 1, rate: 1, playing: false, resolve: null, touched: false };
+const state = { scenes: [], readings: {}, id: 1, rate: 1, playing: false, resolve: null, touched: false };
 
 async function main() {
-  state.scenes = await (await fetch('data/scenes.json')).json();
+  [state.scenes, state.readings] = await Promise.all([
+    fetch('data/scenes.json').then(res => res.json()),
+    fetch(`data/reading-overrides.json?v=${AUDIO_VERSION}`).then(res => res.ok ? res.json() : {}).catch(() => ({})),
+  ]);
   state.id = parseDay(location.search) ?? todayIndex();
   render();
 }
@@ -118,8 +122,10 @@ let session = 0;
 function speakFallback(k, sid) {
   return new Promise(res => {
     if (!('speechSynthesis' in window) || sid !== session) return res();
-    const u = new SpeechSynthesisUtterance(scene().lines[k - 1].text);
-    u.lang = 'zh-TW'; u.rate = state.rate; u.onend = res; u.onerror = res;
+    const u = new SpeechSynthesisUtterance(readingText(state.readings, state.id, k, scene().lines[k - 1].text));
+    u.lang = 'zh-TW'; u.rate = FALLBACK_RATE * state.rate; u.onend = res; u.onerror = res;
+    const voice = taiwanMaleVoice(speechSynthesis.getVoices());
+    if (voice) u.voice = voice;
     speechSynthesis.cancel(); speechSynthesis.speak(u);
   });
 }
@@ -136,7 +142,7 @@ function playLine(k) {
     const fallback = () => { if (fell) return; fell = true; if (done || sid !== session) return finish(); speakFallback(k, sid).then(finish); };
     state.resolve = finish;
     player.onended = finish; player.onerror = fallback;
-    player.src = `audio/${pad(state.id)}-${k}.mp3?v=2`; player.playbackRate = state.rate;
+    player.src = audioUrl(state.id, k); player.playbackRate = state.rate;
     player.play().catch(fallback);
   });
 }
@@ -422,7 +428,7 @@ document.addEventListener('keydown', e => {
 // ── 離線：註冊 Service Worker，並預載目前這天與隔天的圖與 5 句音檔 ──
 function prefetchDay() {
   if (!navigator.onLine || !navigator.serviceWorker || !navigator.serviceWorker.controller) return;
-  const urls = [state.id, state.id + 1].filter(i => i <= 365).flatMap(i => [`img/${pad(i)}.webp`, ...[1, 2, 3, 4, 5].map(k => `audio/${pad(i)}-${k}.mp3?v=2`)]);
+  const urls = [state.id, state.id + 1].filter(i => i <= 365).flatMap(i => [`img/${pad(i)}.webp`, ...[1, 2, 3, 4, 5].map(k => audioUrl(i, k))]);
   (window.requestIdleCallback || setTimeout)(() => urls.forEach(u => fetch(u).catch(() => {})));
 }
 if ('serviceWorker' in navigator) {

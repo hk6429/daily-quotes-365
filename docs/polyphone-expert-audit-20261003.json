@@ -1,0 +1,2653 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-10-03",
+  "language_standard": "臺灣國語；教育部《重編國語辭典修訂本》《國語辭典簡編本》及臺灣教材／學術原始來源",
+  "scanned_count": 1825,
+  "summary": {
+    "scanned_count": 1825,
+    "scene_count": 365,
+    "unique_text_count": 1825,
+    "primary_risk_match_count": 524,
+    "secondary_only_risk_match_count": 320,
+    "context_screened_count": 844,
+    "findings_count": 55,
+    "previous_audit_count": 36,
+    "previous_high_count": 31,
+    "previous_high_reviewed_count": 31,
+    "previous_audit_ids_all_retained": true,
+    "new_sentence_count": 19,
+    "current_override_count": 32,
+    "pronunciation_override_count": 31,
+    "retained_pause_only_override_count": 1,
+    "status_counts": {
+      "already_guided": 27,
+      "disputed": 4,
+      "uncovered_high_risk": 24
+    },
+    "confirmed_incorrect_intended_override_count": 0,
+    "confirmed_audio_error_count": null,
+    "audio_files_listened_count": 0,
+    "unresolved_ids": [
+      "036-1",
+      "055-3",
+      "108-3",
+      "276-3"
+    ],
+    "priority_ids": [
+      "065-2",
+      "355-5",
+      "362-3",
+      "114-2",
+      "173-1",
+      "258-3",
+      "311-1",
+      "312-5",
+      "108-5",
+      "357-5"
+    ],
+    "conclusion": "未找出既有31筆目標字被明確引導成錯音；發現同句引導缺漏與舊清單遺漏。55句是校對候選與覆核紀錄，不是55個已證實讀錯的音檔。"
+  },
+  "input_hashes": {
+    "scenes_sha256": "de0f2004c624c8b925518f6ac0bcf5e28bcb6bdc993ccb0b20f85e1aee2fab6d",
+    "reading_overrides_sha256": "267a9b26ec5579575476a3e14a85c9e05e16fa50b3095704ad632d136b10ed18"
+  },
+  "method": {
+    "programmatic_scope": "全量建立 365 情境、1,825 句的 ID 與原句清冊；核對唯一性並篩查風險字。",
+    "context_review_scope": "分三批閱讀524句主風險候選，再讀320句次風險候選。這是語境篩讀，未逐字為844句建立音注，更不是1,825句逐字校音。",
+    "focused_evidence_scope": "重新核對原31筆高把握項目與5筆未決；只將具實際校對價值的新候選納入55句清單。",
+    "source_policy": "固定詞或直接書證優先；單字義項推論在理由標明。未取得本句教材音注時保留未決。",
+    "current_spoken_definition": "以現行reading-overrides的parts串接；沒有覆寫則列原句。這只是合成輸入文字，並不是ASR逐字稿或實際音檔的發音紀錄。",
+    "audio_boundary": "本代理未聽音檔，且根代理回報工具不支援直接音訊輸入；沒有真人驗聽證據。common_misreading只是要檢查的常見錯音，不代表此MP3已如此朗讀。",
+    "mutation_boundary": "僅新增本報告的JSON與Markdown；沒有修改原文、覆寫、程式或音檔，沒有部署。"
+  },
+  "status_legend": {
+    "already_guided": "已存在符合目標音的文字引導；待音檔驗收。",
+    "uncovered_high_risk": "有規範音／高把握義讀，但該目標未專門引導；不等於現有TTS一定讀錯。",
+    "current_override_problem": "若發現現行引導明確違反該句音義才使用；本次0筆。",
+    "disputed": "訓詁或名稱／正文等證據範圍仍待裁定；不要逕加覆寫。"
+  },
+  "findings": [
+    {
+      "id": "001-1",
+      "text": "學而時習之，不亦說乎？",
+      "author": "孔子",
+      "original_source": "《論語‧學而》",
+      "target": "說（不亦說乎）",
+      "expected_zhuyin": "ㄩㄝˋ",
+      "common_misreading": "ㄕㄨㄛ／ㄕㄨㄟˋ",
+      "current_spoken": "學而時習之，不亦悅乎？",
+      "current_parts": [
+        "學而時習之，",
+        "不亦悅乎？"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "此說表示喜悅。現行悅字引導符合該義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：說",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9168&la=0&powerMode=0",
+          "context": "喜悅義列 ㄩㄝˋ，直接以《論語》學而時習之句為書證。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "018-5",
+      "text": "君子之道，辟如行遠必自邇，辟如登高必自卑",
+      "author": "子思",
+      "original_source": "《中庸》‧第十五章",
+      "target": "辟如（兩處）",
+      "expected_zhuyin": "ㄆㄧˋ ㄖㄨˊ",
+      "common_misreading": "ㄅㄧˋ ㄖㄨˊ",
+      "current_spoken": "君子之道，譬如行遠必自邇，譬如登高必自卑",
+      "current_parts": [
+        "君子之道，",
+        "譬如行遠必自邇，",
+        "譬如登高必自卑"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "兩處都是譬如的比喻用法；現行譬如引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：辟",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408&la=0&powerMode=0",
+          "context": "比喻義通譬，列在 ㄆㄧˋ 音下。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "020-4",
+      "text": "士窮乃見節義。",
+      "author": "韓愈",
+      "original_source": "〈柳子厚墓誌銘〉",
+      "target": "見（乃見）",
+      "expected_zhuyin": "ㄒㄧㄢˋ",
+      "common_misreading": "ㄐㄧㄢˋ",
+      "current_spoken": "士窮乃現節義。",
+      "current_parts": [
+        "士窮乃現節義。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "節義顯現，現行現字引導合理；此結論依顯現義與語境比對。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "028-5",
+      "text": "君子義以為質，禮以行之，孫以出之，信以成之",
+      "author": "孔子",
+      "original_source": "《論語》‧衛靈公",
+      "target": "孫以出之",
+      "expected_zhuyin": "ㄒㄩㄣˋ ㄧˇ ㄔㄨ ㄓ",
+      "common_misreading": "ㄙㄨㄣ",
+      "current_spoken": "君子義以為質，禮以行之，遜以出之，信以成之",
+      "current_parts": [
+        "君子義以為質，",
+        "禮以行之，",
+        "遜以出之，",
+        "信以成之"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "以謙遜表達，現行遜字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：孫",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7460&la=0&powerMode=0",
+          "context": "謙順義列 ㄒㄩㄣˋ，另收 ㄙㄨㄣˋ 又音；不是子孫的 ㄙㄨㄣ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "重編另收ㄙㄨㄣˋ又音；本案採常用教學讀法ㄒㄩㄣˋ，不把又音說成不存在。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "033-2",
+      "text": "讀書百遍，其義自見。",
+      "author": "董遇",
+      "original_source": "《三國志‧魏書‧王肅傳》裴松之注",
+      "target": "見（自見）",
+      "expected_zhuyin": "ㄒㄧㄢˋ",
+      "common_misreading": "ㄐㄧㄢˋ",
+      "current_spoken": "讀書百遍，其義自現。",
+      "current_parts": [
+        "讀書百遍，",
+        "其義自現。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "文義自行顯明；現行現字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "036-1",
+      "text": "吾生也有涯，而知也無涯。",
+      "author": "莊子",
+      "original_source": "《莊子‧養生主》",
+      "target": "知也無涯之知",
+      "expected_zhuyin": "依學問義建議ㄓ；若採智慧訓釋需另核教材",
+      "common_misreading": "逕因古文知字而一律改ㄓˋ",
+      "current_spoken": "吾生也有涯，而知也無涯。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "medium",
+      "reason": "本句談有限生命與無限所知，按知識、學問義以ㄓ為較合理預設；重編分列學問與智慧，但未直接注本句。本次不新增智字覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "未取得本句臺灣教材逐字音注；保留學問／智慧訓釋差異，不能斷稱其中一個音已讀錯。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "037-1",
+      "text": "強勉學問，則聞見博而知益明。",
+      "author": "董仲舒",
+      "original_source": "《漢書‧董仲舒傳》",
+      "target": "強勉",
+      "expected_zhuyin": "ㄑㄧㄤˇ ㄇㄧㄢˇ",
+      "common_misreading": "ㄑㄧㄤˊ ㄇㄧㄢˇ",
+      "current_spoken": "強勉學問，則聞見博而知益明。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "勉力學習的強勉依固定詞讀上聲，不能用強大的陽平音。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：強勉",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=101843&la=0&powerMode=0",
+          "context": "整詞注 ㄑㄧㄤˇ ㄇㄧㄢˇ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "046-5",
+      "text": "成己，仁也；成物，知也",
+      "author": "子思",
+      "original_source": "《中庸》‧第二十五章",
+      "target": "知（成物，知也）",
+      "expected_zhuyin": "ㄓˋ",
+      "common_misreading": "ㄓ",
+      "current_spoken": "成己，仁也；成物，智也",
+      "current_parts": [
+        "成己，",
+        "仁也；",
+        "成物，",
+        "智也"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "與仁德並舉，指智慧；現行智字引導符合此詞義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "055-3",
+      "text": "君子博學而日參省乎己，則知明而行無過矣。",
+      "author": "荀子",
+      "original_source": "《荀子‧勸學》",
+      "target": "知明；參省",
+      "expected_zhuyin": "知：ㄓˋ；省：ㄒㄧㄥˇ；參：ㄙㄢ／ㄘㄢ 待教材裁定",
+      "common_misreading": "知明讀ㄓ；省讀ㄕㄥˇ；未釐清參省即改音",
+      "current_spoken": "君子博學而日參省乎己，則智明而行無過矣。",
+      "current_parts": [
+        "君子博學而日參省乎己，",
+        "則智明而行無過矣。"
+      ],
+      "status": "disputed",
+      "confidence": "mixed",
+      "reason": "現行只把知明引導成智明，這部分合理。參省仍為原字；參有通三與參驗兩種解釋，本次未取得本句可裁定的臺灣教材逐字音注，不能硬判另一讀法錯誤。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：參",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9810&la=0&powerMode=0",
+          "context": "驗證義 ㄘㄢ、同三義 ㄙㄢ；單字條目未直接裁定勸學參省。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：省",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7261&la=0&powerMode=0",
+          "context": "省察、自省用 ㄒㄧㄥˇ，與節省的 ㄕㄥˇ 區別。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "參省的參有通三（ㄙㄢ）與參驗（ㄘㄢ）解釋；省的ㄒㄧㄥˇ與知明的ㄓˋ可先確定。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "059-1",
+      "text": "知者不惑，仁者不憂，勇者不懼。",
+      "author": "孔子",
+      "original_source": "《論語‧子罕》",
+      "target": "知者",
+      "expected_zhuyin": "ㄓˋ ㄓㄜˇ",
+      "common_misreading": "ㄓ ㄓㄜˇ",
+      "current_spoken": "智者不惑，仁者不憂，勇者不懼。",
+      "current_parts": [
+        "智者不惑，",
+        "仁者不憂，",
+        "勇者不懼。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "固定詞的教育部音注直接支持智者引導。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知者不惑",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=114426&la=0&powerMode=0",
+          "context": "整詞音注 ㄓˋ ㄓㄜˇ ㄅㄨˋ ㄏㄨㄛˋ，直接引本句。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "061-5",
+      "text": "日知其所亡，月無忘其所能。",
+      "author": "子夏",
+      "original_source": "《論語‧子張》",
+      "target": "亡（所亡）",
+      "expected_zhuyin": "ㄨˊ",
+      "common_misreading": "ㄨㄤˊ",
+      "current_spoken": "日知其所無，月無忘其所能。",
+      "current_parts": [
+        "日知其所無，",
+        "月無忘其所能。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "指自己尚未具備的知識；現行無字引導合理，不能套用到死亡或亡羊。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：亡",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11548&la=0&powerMode=0",
+          "context": "沒有義與無同音 ㄨˊ；死亡、消滅、失去仍是 ㄨㄤˊ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "065-2",
+      "text": "莫春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+      "author": "曾皙",
+      "original_source": "《論語‧先進》",
+      "target": "莫春；冠者；風乎舞雩",
+      "expected_zhuyin": "莫：ㄇㄨˋ；冠：ㄍㄨㄢˋ；風：ㄈㄥˋ；舞雩：ㄨˇ ㄩˊ",
+      "common_misreading": "莫ㄇㄛˋ；冠ㄍㄨㄢ；風ㄈㄥ",
+      "current_spoken": "暮春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+      "current_parts": [
+        "暮春者，",
+        "春服既成，",
+        "冠者五六人，",
+        "童子六七人，",
+        "浴乎沂，",
+        "風乎舞雩，",
+        "詠而歸。"
+      ],
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "現行暮春已引導莫，但冠者與吹風義的風未引導。冠者有本句直接詞條；風依動詞義判讀。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：莫",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1085&la=0&powerMode=0",
+          "context": "晚、遲義讀 ㄇㄨˋ，直接引莫春者句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：冠者",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=74222&la=0&powerMode=0",
+          "context": "整詞音注 ㄍㄨㄢˋ ㄓㄜˇ，直接引冠者五六人句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：風",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1753&la=0&powerMode=0",
+          "context": "吹風義列 ㄈㄥˋ；依風乎舞雩的動詞語境判讀。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：舞雩",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159848&la=0&powerMode=0",
+          "context": "祭天求雨處的詞義直接引用風乎舞雩；注 ㄨˇ ㄩˊ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "075-3",
+      "text": "白頭搔更短，渾欲不勝簪。",
+      "author": "杜甫",
+      "original_source": "〈春望〉",
+      "target": "不勝簪之勝",
+      "expected_zhuyin": "ㄕㄥ",
+      "common_misreading": "ㄕㄥˋ",
+      "current_spoken": "白頭搔更短，渾欲不勝簪。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "指頭髮稀短得承受不住髮簪；重編不勝條直接引本句，簡編也把承受義列一聲。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：不勝",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=21560&la=0&powerMode=0",
+          "context": "承受不住的 ㄅㄨˋ ㄕㄥ 直接引渾欲不勝簪。"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：勝",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35115&la=0&powerMode=0",
+          "context": "承受得了與盡的義項均注 ㄕㄥ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "094-2",
+      "text": "一貧一富，乃知交態；一貴一賤，交情乃見。",
+      "author": "翟公",
+      "original_source": "《史記‧汲鄭列傳》（太史公引翟公語）",
+      "target": "見（交情乃見）",
+      "expected_zhuyin": "ㄒㄧㄢˋ",
+      "common_misreading": "ㄐㄧㄢˋ",
+      "current_spoken": "一貧一富，乃知交態；一貴一賤，交情乃現。",
+      "current_parts": [
+        "一貧一富，",
+        "乃知交態；",
+        "一貴一賤，",
+        "交情乃現。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "貧富貴賤變化使交情顯現；現行現字符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "108-3",
+      "text": "岑夫子，丹丘生，將進酒，杯莫停。",
+      "author": "李白",
+      "original_source": "〈將進酒〉",
+      "target": "正文將進酒的將",
+      "expected_zhuyin": "請求義可讀ㄑㄧㄤ；詩名詞條讀ㄐㄧㄤ，正文教材待裁定",
+      "common_misreading": "將作品名稱音直接套正文；或一律斷言ㄐㄧㄤ錯",
+      "current_spoken": "岑夫子，丹丘生，將進酒，杯莫停。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "medium",
+      "reason": "本ID含岑夫子、丹丘生、杯莫停，是正文勸飲，不是單獨詩名。將字的請求義支持ㄑㄧㄤ，但教育部詩名將進酒條讀ㄐㄧㄤ，且本次未取得對此正文的臺灣教材音注，保留異讀。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：將",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=6555&la=0&powerMode=0",
+          "context": "請求義列 ㄑㄧㄤ，例為將子無怒，未直接引用此詩句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：將進酒",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=95168&la=0&powerMode=0",
+          "context": "此條專指詩名／樂府舊題，注 ㄐㄧㄤ ㄐㄧㄣˋ ㄐㄧㄡˇ；不能逕代正文句義。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "名稱讀音和正文義讀的證據對象不同；不可把任一詞條當成已全面解決爭議。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "108-5",
+      "text": "願車馬衣輕裘，與朋友共，敝之而無憾。",
+      "author": "子路",
+      "original_source": "《論語‧公冶長》",
+      "target": "衣輕裘之衣",
+      "expected_zhuyin": "ㄧˋ",
+      "common_misreading": "ㄧ",
+      "current_spoken": "願車馬衣輕裘，與朋友共，敝之而無憾。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "臺大公開課講義引朱熹注衣為去聲、穿著義，支持ㄧˋ。現行沒有此句覆寫。",
+      "sources": [
+        {
+          "title": "國立臺灣大學開放式課程：孔子的思想講義",
+          "url": "https://ocw.aca.ntu.edu.tw/uploads/course_item_file/file/5391/107S201_CT13L01.pdf",
+          "context": "本句下方引朱熹四書章句集注：衣，去聲。衣，服之也。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "依朱熹注讀，若改用別家斷句訓釋，須交代文本依據。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "112-1",
+      "text": "人生不相見，動如參與商。",
+      "author": "杜甫",
+      "original_source": "〈贈衛八處士〉",
+      "target": "參（參與商）",
+      "expected_zhuyin": "ㄕㄣ",
+      "common_misreading": "ㄘㄢ",
+      "current_spoken": "人生不相見，動如申與商。",
+      "current_parts": [
+        "人生不相見，",
+        "動如申與商。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "參與商是兩個星宿，不能分詞成參與；現行申字引導方向正確。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：參商",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=131335&la=0&powerMode=0",
+          "context": "兩個星宿名稱，整詞注 ㄕㄣ ㄕㄤ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "114-2",
+      "text": "事君數，斯辱矣；朋友數，斯疏矣。",
+      "author": "子游",
+      "original_source": "《論語‧里仁》",
+      "target": "事君數；朋友數",
+      "expected_zhuyin": "數均ㄕㄨㄛˋ",
+      "common_misreading": "ㄕㄨˋ／ㄕㄨˇ",
+      "current_spoken": "事君數，斯辱矣；朋友數，斯疏矣。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "此數為反覆而煩的頻數，兩處同讀ㄕㄨㄛˋ。重編頻繁義與清華學報所引本句音義相互支持。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：數",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9152&la=0&powerMode=0",
+          "context": "屢次、頻繁義注 ㄕㄨㄛˋ。"
+        },
+        {
+          "title": "清華學報：楊秀芳音義研究",
+          "url": "https://cl.site.nthu.edu.tw/var/file/401/1401/img/1473/168548878.pdf",
+          "context": "論述事君數之數的頻數義，並引古注排除上聲與去聲的數目／計數讀法。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "125-4",
+      "text": "顯譽成於僚友，德行立於己志",
+      "author": "鄭玄",
+      "original_source": "《後漢書》‧鄭玄列傳",
+      "target": "德行",
+      "expected_zhuyin": "ㄉㄜˊ ㄒㄧㄥˋ",
+      "common_misreading": "ㄉㄜˊ ㄒㄧㄥˊ",
+      "current_spoken": "顯譽成於僚友，德行立於己志",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "指品德，採固定詞德行的去聲讀法，不是行走。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：德行",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=42154&la=0&powerMode=0",
+          "context": "整詞注 ㄉㄜˊ ㄒㄧㄥˋ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "126-5",
+      "text": "暮春者，春服既成，浴乎沂，風乎舞雩，詠而歸。",
+      "author": "曾點",
+      "original_source": "《論語‧先進》",
+      "target": "風乎舞雩",
+      "expected_zhuyin": "風：ㄈㄥˋ；舞雩：ㄨˇ ㄩˊ",
+      "common_misreading": "風ㄈㄥ；雩ㄩˇ",
+      "current_spoken": "暮春者，春服既成，浴乎沂，風乎舞雩，詠而歸。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "與065-2同一論語語境，風是吹風動詞。字音判斷可以先確立，是否現有音檔讀錯另行驗聽。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：風",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1753&la=0&powerMode=0",
+          "context": "吹風義列 ㄈㄥˋ；依風乎舞雩的動詞語境判讀。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：舞雩",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159848&la=0&powerMode=0",
+          "context": "祭天求雨處的詞義直接引用風乎舞雩；注 ㄨˇ ㄩˊ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "131-2",
+      "text": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且湛。",
+      "author": "佚名",
+      "original_source": "《詩經‧小雅‧常棣》",
+      "target": "湛；好合",
+      "expected_zhuyin": "湛：ㄉㄢ；好合：ㄏㄠˇ ㄏㄜˊ",
+      "common_misreading": "湛ㄓㄢˋ；好合的好讀ㄏㄠˋ",
+      "current_spoken": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且丹。",
+      "current_parts": [
+        "妻子好合，",
+        "如鼓瑟琴；",
+        "兄弟既翕，",
+        "和樂且丹。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "湛為歡樂，現行丹字合理。好合為和好相親，維持ㄏㄠˇ，不要見到好就改去聲。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：湛",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=2007&la=0&powerMode=0",
+          "context": "歡樂義列 ㄉㄢ，直接引和樂且湛。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：好合",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=80898&la=0&powerMode=0",
+          "context": "和好相親、結為夫妻，注 ㄏㄠˇ ㄏㄜˊ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "147-2",
+      "text": "吾少孤，及長，不省所怙，惟兄嫂是依。",
+      "author": "韓愈",
+      "original_source": "〈祭十二郎文〉",
+      "target": "及長；不省",
+      "expected_zhuyin": "長：ㄓㄤˇ；省：ㄒㄧㄥˇ",
+      "common_misreading": "長ㄔㄤˊ；省ㄕㄥˇ",
+      "current_spoken": "吾少孤，及長，不省所怙，惟兄嫂是依。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "及長指長大，不省指不記得、不知父親的樣子，不能按長度或節省讀。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：長",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7916&la=0&powerMode=0",
+          "context": "ㄓㄤˇ 義項含養育、增進；養育義直接引長我育我。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：省",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7261&la=0&powerMode=0",
+          "context": "省察、自省用 ㄒㄧㄥˇ，與節省的 ㄕㄥˇ 區別。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "148-1",
+      "text": "撫我畜我，長我育我，顧我復我，出入腹我。",
+      "author": "佚名",
+      "original_source": "《詩經‧小雅‧蓼莪》",
+      "target": "畜我；長我",
+      "expected_zhuyin": "畜：ㄒㄩˋ；長：ㄓㄤˇ",
+      "common_misreading": "畜ㄔㄨˋ；長ㄔㄤˊ",
+      "current_spoken": "撫我畜我，長我育我，顧我復我，出入腹我。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "兩字皆為父母養育動詞；長字詞條直接引長我育我。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：畜",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=8580&la=0&powerMode=0",
+          "context": "養育義列 ㄒㄩˋ，並以父母畜養為書證。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：長",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7916&la=0&powerMode=0",
+          "context": "ㄓㄤˇ 義項含養育、增進；養育義直接引長我育我。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "167-1",
+      "text": "客從遠方來，遺我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+      "author": "佚名",
+      "original_source": "《漢樂府‧飲馬長城窟行》",
+      "target": "遺我",
+      "expected_zhuyin": "ㄨㄟˋ ㄨㄛˇ",
+      "common_misreading": "ㄧˊ ㄨㄛˇ",
+      "current_spoken": "客從遠方來，衛我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+      "current_parts": [
+        "客從遠方來，",
+        "衛我雙鯉魚。",
+        "呼兒烹鯉魚，",
+        "中有尺素書。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "贈給我書信，現行衛字引導與贈與義音相同。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：遺",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11468&la=0&powerMode=0",
+          "context": "贈給義列 ㄨㄟˋ；與遺失、遺留的 ㄧˊ 區別。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "168-5",
+      "text": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周行。",
+      "author": "佚名",
+      "original_source": "《詩經‧周南‧卷耳》",
+      "target": "周行",
+      "expected_zhuyin": "ㄓㄡ ㄏㄤˊ",
+      "common_misreading": "ㄓㄡ ㄒㄧㄥˊ",
+      "current_spoken": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周航。",
+      "current_parts": [
+        "采采卷耳，",
+        "不盈頃筐。",
+        "嗟我懷人，",
+        "寘彼周航。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "此詞是大道，辭典直接引用本句；航字引導符合該音。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：周行",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=115747&la=0&powerMode=0",
+          "context": "大道義 ㄓㄡ ㄏㄤˊ 直接引寘彼周行；循環運行另讀 ㄒㄧㄥˊ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "169-4",
+      "text": "愛而不見，搔首踟躕。",
+      "author": "佚名",
+      "original_source": "《詩經‧邶風‧靜女》",
+      "target": "愛；見",
+      "expected_zhuyin": "愛：ㄞˋ；見：ㄒㄧㄢˋ",
+      "common_misreading": "把愛因通薆誤改成其他音；見讀ㄐㄧㄢˋ",
+      "current_spoken": "愛而不現，搔首踟躕。",
+      "current_parts": [
+        "愛而不現，",
+        "搔首踟躕。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "愛通薆取隱藏義，但愛、薆同音，無須改愛。見是顯現，現行現字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：薆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=10365&la=0&powerMode=0",
+          "context": "隱蔽義仍讀 ㄞˋ；通假並不必然改音。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "訓詁採愛通薆、見通現；愛與薆同音，不需新增替字。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "170-5",
+      "text": "習習谷風，以陰以雨。黽勉同心，不宜有怒。",
+      "author": "佚名",
+      "original_source": "《詩經‧邶風‧谷風》",
+      "target": "以陰以雨；黽勉",
+      "expected_zhuyin": "雨作下雨義：ㄩˋ；黽勉：ㄇㄧㄣˇ ㄇㄧㄢˇ",
+      "common_misreading": "雨ㄩˇ；黽ㄇㄧㄢˇ／ㄇㄥˇ",
+      "current_spoken": "習習谷風，以陰以雨。黽勉同心，不宜有怒。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "以陰以雨在成雲降雨語境下，雨作動詞判為ㄩˋ；這項為義項推論。黽勉有直接本句詞條。兩處均未覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：雨",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686&la=0&powerMode=0",
+          "context": "降落或下雨的動詞音 ㄩˋ，列雨雪為例。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：黽勉",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=32013&la=0&powerMode=0",
+          "context": "整詞 ㄇㄧㄣˇ ㄇㄧㄢˇ，直接引用谷風本句。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "雨的詞性判讀需隨教材版本核對；黽勉已有明確音注。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "173-1",
+      "text": "山無陵，江水為竭，冬雷震震夏雨雪，天地合，乃敢與君絕！",
+      "author": "漢樂府",
+      "original_source": "《上邪》",
+      "target": "夏雨雪之雨",
+      "expected_zhuyin": "ㄩˋ",
+      "common_misreading": "ㄩˇ",
+      "current_spoken": "山無陵，江水為竭，冬雷震震夏雨雪，天地合，乃敢與君絕！",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "夏天下雪，雨是降落動詞，應與182-3雨雪採相同音義判準；此句尚未覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：雨",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686&la=0&powerMode=0",
+          "context": "降落或下雨的動詞音 ㄩˋ，列雨雪為例。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "182-3",
+      "text": "昔我往矣，楊柳依依；今我來思，雨雪霏霏。",
+      "author": "佚名",
+      "original_source": "《詩經‧小雅‧采薇》",
+      "target": "雨雪",
+      "expected_zhuyin": "ㄩˋ ㄒㄩㄝˇ",
+      "common_misreading": "ㄩˇ ㄒㄩㄝˇ",
+      "current_spoken": "昔我往矣，楊柳依依；今我來思，玉雪霏霏。",
+      "current_parts": [
+        "昔我往矣，",
+        "楊柳依依；",
+        "今我來思，",
+        "玉雪霏霏。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "雨是下雪的動詞；現行玉字引導符合字典降落義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：雨",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686&la=0&powerMode=0",
+          "context": "降落或下雨的動詞音 ㄩˋ，列雨雪為例。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "200-4",
+      "text": "吳人與越人相惡也，當其同舟而濟，遇風，其相救也如左右手。",
+      "author": "孫子",
+      "original_source": "《孫子兵法‧九地》",
+      "target": "相惡之惡",
+      "expected_zhuyin": "ㄨˋ",
+      "common_misreading": "ㄜˋ",
+      "current_spoken": "吳人與越人相惡也，當其同舟而濟，遇風，其相救也如左右手。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "吳越互相憎惡，惡為厭恨動詞。",
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：惡",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=43073&la=0&powerMode=0",
+          "context": "憎恨、討厭義注 ㄨˋ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "210-1",
+      "text": "今日聽君歌一曲，暫憑杯酒長精神。",
+      "author": "劉禹錫",
+      "original_source": "〈酬樂天揚州初逢席上見贈〉",
+      "target": "長精神之長",
+      "expected_zhuyin": "ㄓㄤˇ",
+      "common_misreading": "ㄔㄤˊ",
+      "current_spoken": "今日聽君歌一曲，暫憑杯酒長精神。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "振作、增長精神，用增進義而不是長短義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：長",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7916&la=0&powerMode=0",
+          "context": "ㄓㄤˇ 義項含養育、增進；養育義直接引長我育我。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "244-3",
+      "text": "獨樂樂不如眾樂樂。",
+      "author": "孟子",
+      "original_source": "《孟子‧梁惠王下》",
+      "target": "獨樂樂；眾樂樂",
+      "expected_zhuyin": "ㄉㄨˊ ㄩㄝˋ ㄌㄜˋ；ㄓㄨㄥˋ ㄩㄝˋ ㄌㄜˋ",
+      "common_misreading": "四個樂都讀ㄌㄜˋ，或都讀ㄩㄝˋ",
+      "current_spoken": "獨悅樂不如眾悅樂。",
+      "current_parts": [
+        "獨悅樂不如眾悅樂。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "依音樂之樂、快樂之樂分讀。現行兩組悅樂的目標音方向正確，但同音替字不等於聲音驗收。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：獨樂樂",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47432&la=0&powerMode=0",
+          "context": "整詞 ㄉㄨˊ ㄩㄝˋ ㄌㄜˋ，指獨自聽音樂的快樂。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "247-4",
+      "text": "天行有常，不為堯存，不為桀亡",
+      "author": "荀子",
+      "original_source": "《荀子‧天論》",
+      "target": "不為堯存；不為桀亡",
+      "expected_zhuyin": "為均ㄨㄟˋ；亡ㄨㄤˊ",
+      "common_misreading": "為ㄨㄟˊ；因通假規則把亡改ㄨˊ",
+      "current_spoken": "天行有常，不為堯存，不為桀亡",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "為表示因為，教育部為字直接引本句。亡是消失、滅亡，不是061-5所亡的沒有義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：為",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11447&la=0&powerMode=0",
+          "context": "因、替、為了等介詞義注 ㄨㄟˋ，直接引不為堯存與為人謀句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：亡",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11548&la=0&powerMode=0",
+          "context": "沒有義與無同音 ㄨˊ；死亡、消滅、失去仍是 ㄨㄤˊ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "258-3",
+      "text": "孝弟也者，其為仁之本與！",
+      "author": "有子",
+      "original_source": "《論語‧學而》",
+      "target": "孝弟；本與",
+      "expected_zhuyin": "弟：ㄊㄧˋ；與：ㄩˊ",
+      "common_misreading": "弟ㄉㄧˋ；與ㄩˇ／ㄩˋ",
+      "current_spoken": "孝弟也者，其為仁之本與！",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "弟同悌，句末與同歟表感嘆；兩字均有教育部詞條支持，與字直接引用本句。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：孝弟",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=107178&la=0&powerMode=0",
+          "context": "注 ㄒㄧㄠˋ ㄊㄧˋ，同孝悌。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：與",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11741&la=0&powerMode=0",
+          "context": "句末感嘆助詞 ㄩˊ 直接引用其為仁之本與；參與義讀 ㄩˋ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "263-1",
+      "text": "喜怒哀樂之未發，謂之中；發而皆中節，謂之和。",
+      "author": "子思",
+      "original_source": "《禮記‧中庸》",
+      "target": "謂之中；皆中節",
+      "expected_zhuyin": "前中：ㄓㄨㄥ；中節：ㄓㄨㄥˋ ㄐㄧㄝˊ",
+      "common_misreading": "兩個中同讀一聲",
+      "current_spoken": "喜怒哀樂之未發，謂之中；發而皆中節，謂之和。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "前一中是未發的中正狀態；後一中是合於節度，教育部中節條直接引用本句。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：中節",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=120402&la=0&powerMode=0",
+          "context": "注 ㄓㄨㄥˋ ㄐㄧㄝˊ，直接引發而皆中節。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "265-1",
+      "text": "吾日三省吾身，為人謀而不忠乎？",
+      "author": "曾子",
+      "original_source": "《論語‧學而》",
+      "target": "三省；為人謀",
+      "expected_zhuyin": "省：ㄒㄧㄥˇ；為：ㄨㄟˋ",
+      "common_misreading": "省ㄕㄥˇ；為ㄨㄟˊ",
+      "current_spoken": "吾日三省吾身，為人謀而不忠乎？",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "省察自己、替人謀事；為字詞條直接引用本句。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：省",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7261&la=0&powerMode=0",
+          "context": "省察、自省用 ㄒㄧㄥˇ，與節省的 ㄕㄥˇ 區別。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：為",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11447&la=0&powerMode=0",
+          "context": "因、替、為了等介詞義注 ㄨㄟˋ，直接引不為堯存與為人謀句。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "276-3",
+      "text": "儉，德之共也；侈，惡之大也。",
+      "author": "御孫",
+      "original_source": "《左傳‧莊公二十四年》",
+      "target": "德之共的共",
+      "expected_zhuyin": "未決；不得逕定ㄍㄨㄥ或任意換成供／恭",
+      "common_misreading": "把共通供、共通恭的其他語境硬套本句",
+      "current_spoken": "儉，德之共也；侈，惡之大也。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "low",
+      "reason": "教育部共字未直接引本句。德之共涉及德行共同處／根本、恭敬、大德等不同訓釋；目前證據不足以指定單一讀音，不加入同音替字。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：共",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4386&la=0&powerMode=0",
+          "context": "列 ㄍㄨㄥˋ、ㄍㄨㄥ、ㄍㄨㄥˇ；單字義項未直接裁定德之共。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "這是訓詁與教材依據未決，並非已證實有某個錯音。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "287-1",
+      "text": "良農不為水旱不耕，良賈不為折閱不市。",
+      "author": "荀子",
+      "original_source": "《荀子‧修身》",
+      "target": "賈；兩個不為",
+      "expected_zhuyin": "賈：ㄍㄨˇ；為：ㄨㄟˋ（兩處）",
+      "common_misreading": "賈ㄐㄧㄚˇ；為ㄨㄟˊ",
+      "current_spoken": "良農不為水旱不耕，良谷不為折閱不市。",
+      "current_parts": [
+        "良農不為水旱不耕，",
+        "良谷不為折閱不市。"
+      ],
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "商人義賈已用谷引導。另兩個為表示因為水旱或虧損，應讀去聲；現行未專門引導這兩處。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：良賈深藏若虛",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=64874&la=0&powerMode=0",
+          "context": "商人義的良賈注 ㄌㄧㄤˊ ㄍㄨˇ；供本句詞義比對。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：為",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11447&la=0&powerMode=0",
+          "context": "因、替、為了等介詞義注 ㄨㄟˋ，直接引不為堯存與為人謀句。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "290-5",
+      "text": "多言數窮，不如守中。",
+      "author": "老子",
+      "original_source": "《道德經》第五章",
+      "target": "數窮",
+      "expected_zhuyin": "ㄕㄨㄛˋ ㄑㄩㄥˊ",
+      "common_misreading": "ㄕㄨˋ／ㄕㄨˇ",
+      "current_spoken": "多言朔窮，不如守中。",
+      "current_parts": [
+        "多言朔窮，",
+        "不如守中。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "教育部整詞音注直接支持，現行朔字合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：多言數窮",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47875&la=0&powerMode=0",
+          "context": "整詞數讀 ㄕㄨㄛˋ，直接引老子本句。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "296-1",
+      "text": "見利思義，見危授命，久要不忘平生之言。",
+      "author": "孔子",
+      "original_source": "《論語‧憲問》",
+      "target": "久要",
+      "expected_zhuyin": "ㄐㄧㄡˇ ㄧㄠ",
+      "common_misreading": "ㄐㄧㄡˇ ㄧㄠˋ",
+      "current_spoken": "見利思義，見危授命，久邀不忘平生之言。",
+      "current_parts": [
+        "見利思義，",
+        "見危授命，",
+        "久邀不忘平生之言。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "要指舊約、舊交，現行邀字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：久要",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=92194&la=0&powerMode=0",
+          "context": "舊約、舊交義注 ㄐㄧㄡˇ ㄧㄠ，直接引久要不忘平生之言。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "311-1",
+      "text": "不陵節而施之謂孫。",
+      "author": "戴聖",
+      "original_source": "《禮記‧學記》",
+      "target": "謂孫之孫",
+      "expected_zhuyin": "ㄒㄩㄣˋ",
+      "common_misreading": "ㄙㄨㄣ",
+      "current_spoken": "不陵節而施之謂孫。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "孫取順的意思，指教學順著學習次序，不是子孫；按重編謙順音讀判定。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：孫",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7460&la=0&powerMode=0",
+          "context": "謙順義列 ㄒㄩㄣˋ，另收 ㄙㄨㄣˋ 又音；不是子孫的 ㄙㄨㄣ。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：陵",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=3715&la=0&powerMode=0",
+          "context": "踰越義直接引不陵節而施之謂孫，可確認語境。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "重編孫另有ㄙㄨㄣˋ又音，本案採ㄒㄩㄣˋ。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "312-5",
+      "text": "陶鈞文思，貴在虛靜，疏瀹五藏，澡雪精神",
+      "author": "劉勰",
+      "original_source": "《文心雕龍》‧〈神思〉",
+      "target": "五藏",
+      "expected_zhuyin": "ㄨˇ ㄗㄤˋ",
+      "common_misreading": "ㄨˇ ㄘㄤˊ",
+      "current_spoken": "陶鈞文思，貴在虛靜，疏瀹五藏，澡雪精神",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "五藏指五臟，藏為臟的古字；此音與儲藏的ㄘㄤˊ不同。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：藏",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9821&la=0&powerMode=0",
+          "context": "內臟義通臟，讀 ㄗㄤˋ；五藏為書證詞。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "317-3",
+      "text": "里仁為美。擇不處仁，焉得知？",
+      "author": "孔子",
+      "original_source": "《論語‧里仁》",
+      "target": "知（焉得知）",
+      "expected_zhuyin": "ㄓˋ",
+      "common_misreading": "ㄓ",
+      "current_spoken": "里仁為美。擇不處仁，焉得智？",
+      "current_parts": [
+        "里仁為美。",
+        "擇不處仁，",
+        "焉得智？"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "教育部知的智慧義直接引本句，現行智字合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "319-2",
+      "text": "知之為知之，不知為不知，是知也。",
+      "author": "孔子",
+      "original_source": "《論語‧為政》",
+      "target": "末尾是知也的知",
+      "expected_zhuyin": "ㄓˋ；前四個知均ㄓ",
+      "common_misreading": "全句知都讀ㄓ，或全句改ㄓˋ",
+      "current_spoken": "知之為知之，不知為不知，是智也。",
+      "current_parts": [
+        "知之為知之，",
+        "不知為不知，",
+        "是智也。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "末尾對能知與不知作智慧評價，依知通智義讀去聲。現行僅換末字，範圍正確；前面知道義不可連帶替換。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "330-3",
+      "text": "教也者，長善而救其失者也。",
+      "author": "戴聖",
+      "original_source": "《禮記‧學記》",
+      "target": "長善之長",
+      "expected_zhuyin": "ㄓㄤˇ",
+      "common_misreading": "ㄔㄤˊ",
+      "current_spoken": "教也者，長善而救其失者也。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "教育使善性增長，依長字增進義讀上聲。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：長",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7916&la=0&powerMode=0",
+          "context": "ㄓㄤˇ 義項含養育、增進；養育義直接引長我育我。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "333-1",
+      "text": "人之有德慧術知者，恆存乎疢疾。",
+      "author": "孟子",
+      "original_source": "《孟子‧盡心上》",
+      "target": "術知之知",
+      "expected_zhuyin": "ㄓˋ",
+      "common_misreading": "ㄓ",
+      "current_spoken": "人之有德慧術智者，恆存乎疢疾。",
+      "current_parts": [
+        "人之有德慧術智者，",
+        "恆存乎疢疾。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "與德慧並列的才智義；現行智字引導符合此語境。屬義項推論，辭典沒有直接引用此全句。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "336-1",
+      "text": "好學近乎知，力行近乎仁，知恥近乎勇。",
+      "author": "子思",
+      "original_source": "《禮記‧中庸》",
+      "target": "近乎知的知",
+      "expected_zhuyin": "ㄓˋ；知恥的知ㄓ",
+      "common_misreading": "兩個知同讀一聲或同讀去聲",
+      "current_spoken": "好學近乎智，力行近乎仁，知恥近乎勇。",
+      "current_parts": [
+        "好學近乎智，",
+        "力行近乎仁，",
+        "知恥近乎勇。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "知仁勇三德中的知是智；後面的知恥為知道。現行只換第一個知，範圍正確。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "336-2",
+      "text": "暴虎馮河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+      "author": "孔子",
+      "original_source": "《論語‧述而》",
+      "target": "馮河",
+      "expected_zhuyin": "ㄆㄧㄥˊ ㄏㄜˊ",
+      "common_misreading": "ㄈㄥˊ ㄏㄜˊ",
+      "current_spoken": "暴虎憑河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+      "current_parts": [
+        "暴虎憑河，",
+        "死而無悔者，",
+        "吾不與也；",
+        "必也臨事而懼，",
+        "好謀而成者也。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "徒步渡河，固定詞音注直接支持現行憑河。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：暴虎馮河",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=16322&la=0&powerMode=0",
+          "context": "整詞馮讀 ㄆㄧㄥˊ，直接引論語本句。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "342-3",
+      "text": "有為者辟若掘井，掘井九軔而不及泉，猶為棄井也。",
+      "author": "孟子",
+      "original_source": "《孟子‧盡心上》",
+      "target": "辟若",
+      "expected_zhuyin": "ㄆㄧˋ ㄖㄨㄛˋ",
+      "common_misreading": "ㄅㄧˋ ㄖㄨㄛˋ",
+      "current_spoken": "有為者譬若掘井，掘井九軔而不及泉，猶為棄井也。",
+      "current_parts": [
+        "有為者譬若掘井，",
+        "掘井九軔而不及泉，",
+        "猶為棄井也。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "比喻掘井，現行譬若符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：辟",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408&la=0&powerMode=0",
+          "context": "比喻義通譬，列在 ㄆㄧˋ 音下。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "343-4",
+      "text": "卒然臨之而不驚，無故加之而不怒。",
+      "author": "蘇軾",
+      "original_source": "〈留侯論〉",
+      "target": "卒然",
+      "expected_zhuyin": "ㄘㄨˋ ㄖㄢˊ",
+      "common_misreading": "ㄗㄨˊ ㄖㄢˊ",
+      "current_spoken": "猝然臨之而不驚，無故加之而不怒。",
+      "current_parts": [
+        "猝然臨之而不驚，",
+        "無故加之而不怒。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "突然臨到，教育部直接以留侯論本句為書證；現行猝然合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：卒然",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=142217&la=0&powerMode=0",
+          "context": "突然義 ㄘㄨˋ ㄖㄢˊ，直接引蘇軾留侯論本句。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "347-5",
+      "text": "行拂亂其所為，所以動心忍性，曾益其所不能。",
+      "author": "孟子",
+      "original_source": "《孟子‧告子下》",
+      "target": "曾益",
+      "expected_zhuyin": "ㄗㄥ ㄧˋ",
+      "common_misreading": "ㄘㄥˊ ㄧˋ",
+      "current_spoken": "行拂亂其所為，所以動心忍性，增益其所不能。",
+      "current_parts": [
+        "行拂亂其所為，",
+        "所以動心忍性，",
+        "增益其所不能。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "增加能力，現行增益有直接詞條依據。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：曾益",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=139084&la=0&powerMode=0",
+          "context": "注 ㄗㄥ ㄧˋ，直接引孟子本句，並列增益寫法。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "354-3",
+      "text": "時窮節乃見，一一垂丹青。",
+      "author": "文天祥",
+      "original_source": "〈正氣歌〉",
+      "target": "節乃見之見",
+      "expected_zhuyin": "ㄒㄧㄢˋ",
+      "common_misreading": "ㄐㄧㄢˋ",
+      "current_spoken": "時窮節乃現，一一垂丹青。",
+      "current_parts": [
+        "時窮節乃現，",
+        "一一垂丹青。"
+      ],
+      "status": "already_guided",
+      "confidence": "high",
+      "reason": "節操在艱困時顯現；現行現字符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "355-5",
+      "text": "舜發於畎畝之中，傅說舉於版築之間，膠鬲舉於魚鹽之中。",
+      "author": "孟子",
+      "original_source": "《孟子‧告子下》",
+      "target": "傅說；膠鬲",
+      "expected_zhuyin": "傅說：ㄈㄨˋ ㄩㄝˋ；膠鬲：ㄐㄧㄠ ㄍㄜˊ",
+      "common_misreading": "說ㄕㄨㄛ；鬲ㄌㄧˋ",
+      "current_spoken": "舜發於畎畝之中，傅悅舉於版築之間，膠鬲舉於魚鹽之中。",
+      "current_parts": [
+        "舜發於畎畝之中，",
+        "傅悅舉於版築之間，",
+        "膠鬲舉於魚鹽之中。"
+      ],
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "現行只用傅悅引導，正確但未涵蓋膠鬲；鬲在此為人名，應讀ㄍㄜˊ。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：傅說",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=39474&la=0&powerMode=0",
+          "context": "商代賢相姓名注 ㄈㄨˋ ㄩㄝˋ。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：膠鬲",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=91367&la=0&powerMode=0",
+          "context": "人名注 ㄐㄧㄠ ㄍㄜˊ，詞義交代販魚鹽經歷。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "357-5",
+      "text": "在軍，熟食者分而後敢食，其所嘗者，卒乘與焉。",
+      "author": "左丘明",
+      "original_source": "《左傳》‧哀公元年",
+      "target": "卒乘；與焉",
+      "expected_zhuyin": "卒乘：ㄗㄨˊ ㄕㄥˋ；與：ㄩˋ",
+      "common_misreading": "乘ㄔㄥˊ；與ㄩˇ；卒ㄘㄨˋ",
+      "current_spoken": "在軍，熟食者分而後敢食，其所嘗者，卒乘與焉。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "卒乘是軍隊，與是參與、同享，不是和的連詞。卒仍為士卒ㄗㄨˊ，不可套用卒然的ㄘㄨˋ。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：卒乘",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=139207&la=0&powerMode=0",
+          "context": "士兵戰車／軍隊義注 ㄗㄨˊ ㄕㄥˋ。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：與",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11741&la=0&powerMode=0",
+          "context": "句末感嘆助詞 ㄩˊ 直接引用其為仁之本與；參與義讀 ㄩˋ。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "362-3",
+      "text": "一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂。",
+      "author": "孔子",
+      "original_source": "《論語‧雍也》",
+      "target": "簞食",
+      "expected_zhuyin": "ㄉㄢ ㄙˋ",
+      "common_misreading": "ㄉㄢ ㄕˊ",
+      "current_spoken": "一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂。",
+      "current_parts": null,
+      "status": "uncovered_high_risk",
+      "confidence": "high",
+      "reason": "教育部簞食詞條直接引用本句，食在此依固定詞讀ㄙˋ。上一版只列待確認，現在可提升為有規範依據的待驗聽項。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：簞食",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=43901&la=0&powerMode=0",
+          "context": "整詞 ㄉㄢ ㄙˋ，直接引用論語一簞食一瓢飲。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "本次未見此語境有需要保留的異讀。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    }
+  ],
+  "override_review": [
+    {
+      "id": "001-1",
+      "text": "學而時習之，不亦說乎？",
+      "current_parts": [
+        "學而時習之，",
+        "不亦悅乎？"
+      ],
+      "current_spoken": "學而時習之，不亦悅乎？",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "此說表示喜悅。現行悅字引導符合該義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：說",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9168&la=0&powerMode=0",
+          "context": "喜悅義列 ㄩㄝˋ，直接以《論語》學而時習之句為書證。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "008-1",
+      "text": "長風破浪會有時，直掛雲帆濟滄海。",
+      "current_parts": [
+        "長風破浪，",
+        "會有時，",
+        "直掛雲帆，",
+        "濟滄海。"
+      ],
+      "current_spoken": "長風破浪，會有時，直掛雲帆，濟滄海。",
+      "review_result": "停頓分組，沒有換字；非多音字修正",
+      "verified_intended_sound": false,
+      "finding_status": "not_a_pronunciation_override",
+      "reason": "只變更分句與停頓，不能當成已校音。",
+      "sources": [],
+      "audio_verified": false
+    },
+    {
+      "id": "018-5",
+      "text": "君子之道，辟如行遠必自邇，辟如登高必自卑",
+      "current_parts": [
+        "君子之道，",
+        "譬如行遠必自邇，",
+        "譬如登高必自卑"
+      ],
+      "current_spoken": "君子之道，譬如行遠必自邇，譬如登高必自卑",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "兩處都是譬如的比喻用法；現行譬如引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：辟",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408&la=0&powerMode=0",
+          "context": "比喻義通譬，列在 ㄆㄧˋ 音下。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "020-4",
+      "text": "士窮乃見節義。",
+      "current_parts": [
+        "士窮乃現節義。"
+      ],
+      "current_spoken": "士窮乃現節義。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "節義顯現，現行現字引導合理；此結論依顯現義與語境比對。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "028-5",
+      "text": "君子義以為質，禮以行之，孫以出之，信以成之",
+      "current_parts": [
+        "君子義以為質，",
+        "禮以行之，",
+        "遜以出之，",
+        "信以成之"
+      ],
+      "current_spoken": "君子義以為質，禮以行之，遜以出之，信以成之",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "以謙遜表達，現行遜字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：孫",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7460&la=0&powerMode=0",
+          "context": "謙順義列 ㄒㄩㄣˋ，另收 ㄙㄨㄣˋ 又音；不是子孫的 ㄙㄨㄣ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "033-2",
+      "text": "讀書百遍，其義自見。",
+      "current_parts": [
+        "讀書百遍，",
+        "其義自現。"
+      ],
+      "current_spoken": "讀書百遍，其義自現。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "文義自行顯明；現行現字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "046-5",
+      "text": "成己，仁也；成物，知也",
+      "current_parts": [
+        "成己，",
+        "仁也；",
+        "成物，",
+        "智也"
+      ],
+      "current_spoken": "成己，仁也；成物，智也",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "與仁德並舉，指智慧；現行智字引導符合此詞義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "055-3",
+      "text": "君子博學而日參省乎己，則知明而行無過矣。",
+      "current_parts": [
+        "君子博學而日參省乎己，",
+        "則智明而行無過矣。"
+      ],
+      "current_spoken": "君子博學而日參省乎己，則智明而行無過矣。",
+      "review_result": "原目標音引導可保留，但同句尚有未引導或未決字音",
+      "verified_intended_sound": true,
+      "finding_status": "disputed",
+      "reason": "現行只把知明引導成智明，這部分合理。參省仍為原字；參有通三與參驗兩種解釋，本次未取得本句可裁定的臺灣教材逐字音注，不能硬判另一讀法錯誤。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：參",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9810&la=0&powerMode=0",
+          "context": "驗證義 ㄘㄢ、同三義 ㄙㄢ；單字條目未直接裁定勸學參省。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：省",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7261&la=0&powerMode=0",
+          "context": "省察、自省用 ㄒㄧㄥˇ，與節省的 ㄕㄥˇ 區別。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "059-1",
+      "text": "知者不惑，仁者不憂，勇者不懼。",
+      "current_parts": [
+        "智者不惑，",
+        "仁者不憂，",
+        "勇者不懼。"
+      ],
+      "current_spoken": "智者不惑，仁者不憂，勇者不懼。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "固定詞的教育部音注直接支持智者引導。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知者不惑",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=114426&la=0&powerMode=0",
+          "context": "整詞音注 ㄓˋ ㄓㄜˇ ㄅㄨˋ ㄏㄨㄛˋ，直接引本句。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "061-5",
+      "text": "日知其所亡，月無忘其所能。",
+      "current_parts": [
+        "日知其所無，",
+        "月無忘其所能。"
+      ],
+      "current_spoken": "日知其所無，月無忘其所能。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "指自己尚未具備的知識；現行無字引導合理，不能套用到死亡或亡羊。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：亡",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11548&la=0&powerMode=0",
+          "context": "沒有義與無同音 ㄨˊ；死亡、消滅、失去仍是 ㄨㄤˊ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "065-2",
+      "text": "莫春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+      "current_parts": [
+        "暮春者，",
+        "春服既成，",
+        "冠者五六人，",
+        "童子六七人，",
+        "浴乎沂，",
+        "風乎舞雩，",
+        "詠而歸。"
+      ],
+      "current_spoken": "暮春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+      "review_result": "原目標音引導可保留，但同句尚有未引導或未決字音",
+      "verified_intended_sound": true,
+      "finding_status": "uncovered_high_risk",
+      "reason": "現行暮春已引導莫，但冠者與吹風義的風未引導。冠者有本句直接詞條；風依動詞義判讀。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：莫",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1085&la=0&powerMode=0",
+          "context": "晚、遲義讀 ㄇㄨˋ，直接引莫春者句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：冠者",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=74222&la=0&powerMode=0",
+          "context": "整詞音注 ㄍㄨㄢˋ ㄓㄜˇ，直接引冠者五六人句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：風",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1753&la=0&powerMode=0",
+          "context": "吹風義列 ㄈㄥˋ；依風乎舞雩的動詞語境判讀。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：舞雩",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159848&la=0&powerMode=0",
+          "context": "祭天求雨處的詞義直接引用風乎舞雩；注 ㄨˇ ㄩˊ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "094-2",
+      "text": "一貧一富，乃知交態；一貴一賤，交情乃見。",
+      "current_parts": [
+        "一貧一富，",
+        "乃知交態；",
+        "一貴一賤，",
+        "交情乃現。"
+      ],
+      "current_spoken": "一貧一富，乃知交態；一貴一賤，交情乃現。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "貧富貴賤變化使交情顯現；現行現字符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "112-1",
+      "text": "人生不相見，動如參與商。",
+      "current_parts": [
+        "人生不相見，",
+        "動如申與商。"
+      ],
+      "current_spoken": "人生不相見，動如申與商。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "參與商是兩個星宿，不能分詞成參與；現行申字引導方向正確。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：參商",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=131335&la=0&powerMode=0",
+          "context": "兩個星宿名稱，整詞注 ㄕㄣ ㄕㄤ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "131-2",
+      "text": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且湛。",
+      "current_parts": [
+        "妻子好合，",
+        "如鼓瑟琴；",
+        "兄弟既翕，",
+        "和樂且丹。"
+      ],
+      "current_spoken": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且丹。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "湛為歡樂，現行丹字合理。好合為和好相親，維持ㄏㄠˇ，不要見到好就改去聲。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：湛",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=2007&la=0&powerMode=0",
+          "context": "歡樂義列 ㄉㄢ，直接引和樂且湛。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：好合",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=80898&la=0&powerMode=0",
+          "context": "和好相親、結為夫妻，注 ㄏㄠˇ ㄏㄜˊ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "167-1",
+      "text": "客從遠方來，遺我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+      "current_parts": [
+        "客從遠方來，",
+        "衛我雙鯉魚。",
+        "呼兒烹鯉魚，",
+        "中有尺素書。"
+      ],
+      "current_spoken": "客從遠方來，衛我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "贈給我書信，現行衛字引導與贈與義音相同。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：遺",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11468&la=0&powerMode=0",
+          "context": "贈給義列 ㄨㄟˋ；與遺失、遺留的 ㄧˊ 區別。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "168-5",
+      "text": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周行。",
+      "current_parts": [
+        "采采卷耳，",
+        "不盈頃筐。",
+        "嗟我懷人，",
+        "寘彼周航。"
+      ],
+      "current_spoken": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周航。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "此詞是大道，辭典直接引用本句；航字引導符合該音。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：周行",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=115747&la=0&powerMode=0",
+          "context": "大道義 ㄓㄡ ㄏㄤˊ 直接引寘彼周行；循環運行另讀 ㄒㄧㄥˊ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "169-4",
+      "text": "愛而不見，搔首踟躕。",
+      "current_parts": [
+        "愛而不現，",
+        "搔首踟躕。"
+      ],
+      "current_spoken": "愛而不現，搔首踟躕。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "愛通薆取隱藏義，但愛、薆同音，無須改愛。見是顯現，現行現字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：薆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=10365&la=0&powerMode=0",
+          "context": "隱蔽義仍讀 ㄞˋ；通假並不必然改音。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "182-3",
+      "text": "昔我往矣，楊柳依依；今我來思，雨雪霏霏。",
+      "current_parts": [
+        "昔我往矣，",
+        "楊柳依依；",
+        "今我來思，",
+        "玉雪霏霏。"
+      ],
+      "current_spoken": "昔我往矣，楊柳依依；今我來思，玉雪霏霏。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "雨是下雪的動詞；現行玉字引導符合字典降落義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：雨",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686&la=0&powerMode=0",
+          "context": "降落或下雨的動詞音 ㄩˋ，列雨雪為例。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "244-3",
+      "text": "獨樂樂不如眾樂樂。",
+      "current_parts": [
+        "獨悅樂不如眾悅樂。"
+      ],
+      "current_spoken": "獨悅樂不如眾悅樂。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "依音樂之樂、快樂之樂分讀。現行兩組悅樂的目標音方向正確，但同音替字不等於聲音驗收。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：獨樂樂",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47432&la=0&powerMode=0",
+          "context": "整詞 ㄉㄨˊ ㄩㄝˋ ㄌㄜˋ，指獨自聽音樂的快樂。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "287-1",
+      "text": "良農不為水旱不耕，良賈不為折閱不市。",
+      "current_parts": [
+        "良農不為水旱不耕，",
+        "良谷不為折閱不市。"
+      ],
+      "current_spoken": "良農不為水旱不耕，良谷不為折閱不市。",
+      "review_result": "原目標音引導可保留，但同句尚有未引導或未決字音",
+      "verified_intended_sound": true,
+      "finding_status": "uncovered_high_risk",
+      "reason": "商人義賈已用谷引導。另兩個為表示因為水旱或虧損，應讀去聲；現行未專門引導這兩處。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：良賈深藏若虛",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=64874&la=0&powerMode=0",
+          "context": "商人義的良賈注 ㄌㄧㄤˊ ㄍㄨˇ；供本句詞義比對。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：為",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11447&la=0&powerMode=0",
+          "context": "因、替、為了等介詞義注 ㄨㄟˋ，直接引不為堯存與為人謀句。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "290-5",
+      "text": "多言數窮，不如守中。",
+      "current_parts": [
+        "多言朔窮，",
+        "不如守中。"
+      ],
+      "current_spoken": "多言朔窮，不如守中。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "教育部整詞音注直接支持，現行朔字合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：多言數窮",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47875&la=0&powerMode=0",
+          "context": "整詞數讀 ㄕㄨㄛˋ，直接引老子本句。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "296-1",
+      "text": "見利思義，見危授命，久要不忘平生之言。",
+      "current_parts": [
+        "見利思義，",
+        "見危授命，",
+        "久邀不忘平生之言。"
+      ],
+      "current_spoken": "見利思義，見危授命，久邀不忘平生之言。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "要指舊約、舊交，現行邀字引導合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：久要",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=92194&la=0&powerMode=0",
+          "context": "舊約、舊交義注 ㄐㄧㄡˇ ㄧㄠ，直接引久要不忘平生之言。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "317-3",
+      "text": "里仁為美。擇不處仁，焉得知？",
+      "current_parts": [
+        "里仁為美。",
+        "擇不處仁，",
+        "焉得智？"
+      ],
+      "current_spoken": "里仁為美。擇不處仁，焉得智？",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "教育部知的智慧義直接引本句，現行智字合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "319-2",
+      "text": "知之為知之，不知為不知，是知也。",
+      "current_parts": [
+        "知之為知之，",
+        "不知為不知，",
+        "是智也。"
+      ],
+      "current_spoken": "知之為知之，不知為不知，是智也。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "末尾對能知與不知作智慧評價，依知通智義讀去聲。現行僅換末字，範圍正確；前面知道義不可連帶替換。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "333-1",
+      "text": "人之有德慧術知者，恆存乎疢疾。",
+      "current_parts": [
+        "人之有德慧術智者，",
+        "恆存乎疢疾。"
+      ],
+      "current_spoken": "人之有德慧術智者，恆存乎疢疾。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "與德慧並列的才智義；現行智字引導符合此語境。屬義項推論，辭典沒有直接引用此全句。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "336-1",
+      "text": "好學近乎知，力行近乎仁，知恥近乎勇。",
+      "current_parts": [
+        "好學近乎智，",
+        "力行近乎仁，",
+        "知恥近乎勇。"
+      ],
+      "current_spoken": "好學近乎智，力行近乎仁，知恥近乎勇。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "知仁勇三德中的知是智；後面的知恥為知道。現行只換第一個知，範圍正確。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "336-2",
+      "text": "暴虎馮河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+      "current_parts": [
+        "暴虎憑河，",
+        "死而無悔者，",
+        "吾不與也；",
+        "必也臨事而懼，",
+        "好謀而成者也。"
+      ],
+      "current_spoken": "暴虎憑河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "徒步渡河，固定詞音注直接支持現行憑河。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：暴虎馮河",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=16322&la=0&powerMode=0",
+          "context": "整詞馮讀 ㄆㄧㄥˊ，直接引論語本句。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "342-3",
+      "text": "有為者辟若掘井，掘井九軔而不及泉，猶為棄井也。",
+      "current_parts": [
+        "有為者譬若掘井，",
+        "掘井九軔而不及泉，",
+        "猶為棄井也。"
+      ],
+      "current_spoken": "有為者譬若掘井，掘井九軔而不及泉，猶為棄井也。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "比喻掘井，現行譬若符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：辟",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408&la=0&powerMode=0",
+          "context": "比喻義通譬，列在 ㄆㄧˋ 音下。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "343-4",
+      "text": "卒然臨之而不驚，無故加之而不怒。",
+      "current_parts": [
+        "猝然臨之而不驚，",
+        "無故加之而不怒。"
+      ],
+      "current_spoken": "猝然臨之而不驚，無故加之而不怒。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "突然臨到，教育部直接以留侯論本句為書證；現行猝然合理。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：卒然",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=142217&la=0&powerMode=0",
+          "context": "突然義 ㄘㄨˋ ㄖㄢˊ，直接引蘇軾留侯論本句。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "347-5",
+      "text": "行拂亂其所為，所以動心忍性，曾益其所不能。",
+      "current_parts": [
+        "行拂亂其所為，",
+        "所以動心忍性，",
+        "增益其所不能。"
+      ],
+      "current_spoken": "行拂亂其所為，所以動心忍性，增益其所不能。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "增加能力，現行增益有直接詞條依據。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：曾益",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=139084&la=0&powerMode=0",
+          "context": "注 ㄗㄥ ㄧˋ，直接引孟子本句，並列增益寫法。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "354-3",
+      "text": "時窮節乃見，一一垂丹青。",
+      "current_parts": [
+        "時窮節乃現，",
+        "一一垂丹青。"
+      ],
+      "current_spoken": "時窮節乃現，一一垂丹青。",
+      "review_result": "原目標音引導符合本次核對的義項",
+      "verified_intended_sound": true,
+      "finding_status": "already_guided",
+      "reason": "節操在艱困時顯現；現行現字符合此義。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ],
+      "audio_verified": false
+    },
+    {
+      "id": "355-5",
+      "text": "舜發於畎畝之中，傅說舉於版築之間，膠鬲舉於魚鹽之中。",
+      "current_parts": [
+        "舜發於畎畝之中，",
+        "傅悅舉於版築之間，",
+        "膠鬲舉於魚鹽之中。"
+      ],
+      "current_spoken": "舜發於畎畝之中，傅悅舉於版築之間，膠鬲舉於魚鹽之中。",
+      "review_result": "原目標音引導可保留，但同句尚有未引導或未決字音",
+      "verified_intended_sound": true,
+      "finding_status": "uncovered_high_risk",
+      "reason": "現行只用傅悅引導，正確但未涵蓋膠鬲；鬲在此為人名，應讀ㄍㄜˊ。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：傅說",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=39474&la=0&powerMode=0",
+          "context": "商代賢相姓名注 ㄈㄨˋ ㄩㄝˋ。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：膠鬲",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=91367&la=0&powerMode=0",
+          "context": "人名注 ㄐㄧㄠ ㄍㄜˊ，詞義交代販魚鹽經歷。"
+        }
+      ],
+      "audio_verified": false
+    }
+  ],
+  "previous_pending_review": [
+    {
+      "id": "036-1",
+      "text": "吾生也有涯，而知也無涯。",
+      "new_status": "disputed",
+      "expected_zhuyin": "依學問義建議ㄓ；若採智慧訓釋需另核教材",
+      "reason": "本句談有限生命與無限所知，按知識、學問義以ㄓ為較合理預設；重編分列學問與智慧，但未直接注本句。本次不新增智字覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ]
+    },
+    {
+      "id": "126-5",
+      "text": "暮春者，春服既成，浴乎沂，風乎舞雩，詠而歸。",
+      "new_status": "uncovered_high_risk",
+      "expected_zhuyin": "風：ㄈㄥˋ；舞雩：ㄨˇ ㄩˊ",
+      "reason": "與065-2同一論語語境，風是吹風動詞。字音判斷可以先確立，是否現有音檔讀錯另行驗聽。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：風",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1753&la=0&powerMode=0",
+          "context": "吹風義列 ㄈㄥˋ；依風乎舞雩的動詞語境判讀。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：舞雩",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159848&la=0&powerMode=0",
+          "context": "祭天求雨處的詞義直接引用風乎舞雩；注 ㄨˇ ㄩˊ。"
+        }
+      ]
+    },
+    {
+      "id": "170-5",
+      "text": "習習谷風，以陰以雨。黽勉同心，不宜有怒。",
+      "new_status": "uncovered_high_risk",
+      "expected_zhuyin": "雨作下雨義：ㄩˋ；黽勉：ㄇㄧㄣˇ ㄇㄧㄢˇ",
+      "reason": "以陰以雨在成雲降雨語境下，雨作動詞判為ㄩˋ；這項為義項推論。黽勉有直接本句詞條。兩處均未覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：雨",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686&la=0&powerMode=0",
+          "context": "降落或下雨的動詞音 ㄩˋ，列雨雪為例。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：黽勉",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=32013&la=0&powerMode=0",
+          "context": "整詞 ㄇㄧㄣˇ ㄇㄧㄢˇ，直接引用谷風本句。"
+        }
+      ]
+    },
+    {
+      "id": "276-3",
+      "text": "儉，德之共也；侈，惡之大也。",
+      "new_status": "disputed",
+      "expected_zhuyin": "未決；不得逕定ㄍㄨㄥ或任意換成供／恭",
+      "reason": "教育部共字未直接引本句。德之共涉及德行共同處／根本、恭敬、大德等不同訓釋；目前證據不足以指定單一讀音，不加入同音替字。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：共",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4386&la=0&powerMode=0",
+          "context": "列 ㄍㄨㄥˋ、ㄍㄨㄥ、ㄍㄨㄥˇ；單字義項未直接裁定德之共。"
+        }
+      ]
+    },
+    {
+      "id": "362-3",
+      "text": "一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂。",
+      "new_status": "uncovered_high_risk",
+      "expected_zhuyin": "ㄉㄢ ㄙˋ",
+      "reason": "教育部簞食詞條直接引用本句，食在此依固定詞讀ㄙˋ。上一版只列待確認，現在可提升為有規範依據的待驗聽項。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：簞食",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=43901&la=0&powerMode=0",
+          "context": "整詞 ㄉㄢ ㄙˋ，直接引用論語一簞食一瓢飲。"
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "036-1",
+      "text": "吾生也有涯，而知也無涯。",
+      "author": "莊子",
+      "original_source": "《莊子‧養生主》",
+      "target": "知也無涯之知",
+      "expected_zhuyin": "依學問義建議ㄓ；若採智慧訓釋需另核教材",
+      "common_misreading": "逕因古文知字而一律改ㄓˋ",
+      "current_spoken": "吾生也有涯，而知也無涯。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "medium",
+      "reason": "本句談有限生命與無限所知，按知識、學問義以ㄓ為較合理預設；重編分列學問與智慧，但未直接注本句。本次不新增智字覆寫。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "未取得本句臺灣教材逐字音注；保留學問／智慧訓釋差異，不能斷稱其中一個音已讀錯。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "055-3",
+      "text": "君子博學而日參省乎己，則知明而行無過矣。",
+      "author": "荀子",
+      "original_source": "《荀子‧勸學》",
+      "target": "知明；參省",
+      "expected_zhuyin": "知：ㄓˋ；省：ㄒㄧㄥˇ；參：ㄙㄢ／ㄘㄢ 待教材裁定",
+      "common_misreading": "知明讀ㄓ；省讀ㄕㄥˇ；未釐清參省即改音",
+      "current_spoken": "君子博學而日參省乎己，則智明而行無過矣。",
+      "current_parts": [
+        "君子博學而日參省乎己，",
+        "則智明而行無過矣。"
+      ],
+      "status": "disputed",
+      "confidence": "mixed",
+      "reason": "現行只把知明引導成智明，這部分合理。參省仍為原字；參有通三與參驗兩種解釋，本次未取得本句可裁定的臺灣教材逐字音注，不能硬判另一讀法錯誤。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：知",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499&la=0&powerMode=0",
+          "context": "學問義列 ㄓ；智慧義列 ㄓˋ，例含里仁、知仁勇。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：參",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9810&la=0&powerMode=0",
+          "context": "驗證義 ㄘㄢ、同三義 ㄙㄢ；單字條目未直接裁定勸學參省。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：省",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7261&la=0&powerMode=0",
+          "context": "省察、自省用 ㄒㄧㄥˇ，與節省的 ㄕㄥˇ 區別。"
+        }
+      ],
+      "has_existing_override": true,
+      "variant_note": "參省的參有通三（ㄙㄢ）與參驗（ㄘㄢ）解釋；省的ㄒㄧㄥˇ與知明的ㄓˋ可先確定。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "108-3",
+      "text": "岑夫子，丹丘生，將進酒，杯莫停。",
+      "author": "李白",
+      "original_source": "〈將進酒〉",
+      "target": "正文將進酒的將",
+      "expected_zhuyin": "請求義可讀ㄑㄧㄤ；詩名詞條讀ㄐㄧㄤ，正文教材待裁定",
+      "common_misreading": "將作品名稱音直接套正文；或一律斷言ㄐㄧㄤ錯",
+      "current_spoken": "岑夫子，丹丘生，將進酒，杯莫停。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "medium",
+      "reason": "本ID含岑夫子、丹丘生、杯莫停，是正文勸飲，不是單獨詩名。將字的請求義支持ㄑㄧㄤ，但教育部詩名將進酒條讀ㄐㄧㄤ，且本次未取得對此正文的臺灣教材音注，保留異讀。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：將",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=6555&la=0&powerMode=0",
+          "context": "請求義列 ㄑㄧㄤ，例為將子無怒，未直接引用此詩句。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：將進酒",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=95168&la=0&powerMode=0",
+          "context": "此條專指詩名／樂府舊題，注 ㄐㄧㄤ ㄐㄧㄣˋ ㄐㄧㄡˇ；不能逕代正文句義。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "名稱讀音和正文義讀的證據對象不同；不可把任一詞條當成已全面解決爭議。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    },
+    {
+      "id": "276-3",
+      "text": "儉，德之共也；侈，惡之大也。",
+      "author": "御孫",
+      "original_source": "《左傳‧莊公二十四年》",
+      "target": "德之共的共",
+      "expected_zhuyin": "未決；不得逕定ㄍㄨㄥ或任意換成供／恭",
+      "common_misreading": "把共通供、共通恭的其他語境硬套本句",
+      "current_spoken": "儉，德之共也；侈，惡之大也。",
+      "current_parts": null,
+      "status": "disputed",
+      "confidence": "low",
+      "reason": "教育部共字未直接引本句。德之共涉及德行共同處／根本、恭敬、大德等不同訓釋；目前證據不足以指定單一讀音，不加入同音替字。",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：共",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4386&la=0&powerMode=0",
+          "context": "列 ㄍㄨㄥˋ、ㄍㄨㄥ、ㄍㄨㄥˇ；單字義項未直接裁定德之共。"
+        }
+      ],
+      "has_existing_override": false,
+      "variant_note": "這是訓詁與教材依據未決，並非已證實有某個錯音。",
+      "audio_verification": "未驗聽；不能判定現有 MP3 已讀錯。"
+    }
+  ],
+  "cross_context_controls": [
+    {
+      "character": "見",
+      "rule": "顯現讀ㄒㄧㄢˋ；看到、相見與被動見仍讀ㄐㄧㄢˋ；不可全域換現。",
+      "examples": [
+        "020-4",
+        "033-2",
+        "169-4",
+        "354-3"
+      ],
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：見",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810&la=0&powerMode=0",
+          "context": "顯出義列 ㄒㄧㄢˋ；看見與被動義仍列 ㄐㄧㄢˋ。"
+        }
+      ]
+    },
+    {
+      "character": "亡",
+      "rule": "061-5所亡是沒有，ㄨˊ；247-4桀亡、337-1亡羊等仍ㄨㄤˊ。",
+      "examples": [
+        "061-5",
+        "247-4",
+        "337-1"
+      ],
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：亡",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11548&la=0&powerMode=0",
+          "context": "沒有義與無同音 ㄨˊ；死亡、消滅、失去仍是 ㄨㄤˊ。"
+        }
+      ]
+    },
+    {
+      "character": "卒",
+      "rule": "343-4卒然為ㄘㄨˋ；093-4卒相與驩與328-2卒之的終於義、357-5士卒義維持ㄗㄨˊ。",
+      "examples": [
+        "093-4",
+        "328-2",
+        "343-4",
+        "357-5"
+      ],
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：卒",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=9835&la=0&powerMode=0",
+          "context": "終於／士兵列ㄗㄨˊ；突然列ㄘㄨˋ。"
+        }
+      ]
+    },
+    {
+      "character": "愛",
+      "rule": "169-4愛通薆而同音ㄞˋ，不得把通假本身當成改音理由。",
+      "examples": [
+        "169-4"
+      ],
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：薆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=10365&la=0&powerMode=0",
+          "context": "隱蔽義仍讀 ㄞˋ；通假並不必然改音。"
+        }
+      ]
+    },
+    {
+      "character": "好／樂",
+      "rule": "131-2好合維持ㄏㄠˇ，不能套用好學ㄏㄠˋ；244-3音樂與快樂分讀，不能把全站樂統一替成悅。",
+      "examples": [
+        "131-2",
+        "244-3"
+      ],
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：好合",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=80898&la=0&powerMode=0",
+          "context": "和好相親、結為夫妻，注 ㄏㄠˇ ㄏㄜˊ。"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：獨樂樂",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47432&la=0&powerMode=0",
+          "context": "整詞 ㄉㄨˊ ㄩㄝˋ ㄌㄜˋ，指獨自聽音樂的快樂。"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "全量程式掃描只證明有掃描1,825句，不證明所有字音均正確。",
+    "原31筆引導通過的是目標音與語境的文字核對，並非1,825個音檔或31個音檔通過驗聽。",
+    "同音替字可造成分詞、語意韻律或重音副作用；音檔是否需要重生應由逐句驗聽決定。",
+    "未有直接證據的候選保留在未決項，未以經驗硬定。",
+    "本清單沒有覆蓋全部重音、輕聲、連讀變調、詩歌押韻的古音或誦讀腔。"
+  ]
+}

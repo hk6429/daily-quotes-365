@@ -1,1 +1,1 @@
-{"name":"daily-quotes-365","private":true,"type":"module","scripts":{"test":"node --test test/day.test.mjs test/quiz.test.mjs test/mission.test.mjs && node scripts/validate.cjs && node scripts/check-assets.cjs","merge":"node scripts/merge-batches.cjs"}}
+{"name":"daily-quotes-365","private":true,"type":"module","scripts":{"test":"python3 -B test/audio.test.py && node --test test/day.test.mjs test/quiz.test.mjs test/mission.test.mjs test/audio-config.test.mjs && node scripts/validate.cjs && node scripts/check-assets.cjs","merge":"node scripts/merge-batches.cjs"}}

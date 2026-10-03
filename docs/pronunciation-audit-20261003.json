@@ -1,0 +1,290 @@
+[
+  {
+    "id": "001-1",
+    "text": "學而時習之，不亦說乎？",
+    "spoken": "學而時習之，不亦悅乎？",
+    "reason": "「說」在此通「悅」，讀 ㄩㄝˋ，表示喜悅；僅引導此句朗讀。",
+    "source": "https://pedia.cloud.edu.tw/Entry/Detail/?title=%E8%AA%AA",
+    "confidence": "high"
+  },
+  {
+    "id": "018-5",
+    "text": "君子之道，辟如行遠必自邇，辟如登高必自卑",
+    "spoken": "君子之道，譬如行遠必自邇，譬如登高必自卑",
+    "reason": "「辟如」的辟通「譬」，讀 ㄆㄧˋ；此句兩處均為比喻用法。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408",
+    "confidence": "high"
+  },
+  {
+    "id": "020-4",
+    "text": "士窮乃見節義。",
+    "spoken": "士窮乃現節義。",
+    "reason": "「見」意為顯露節義，同「現」，讀 ㄒㄧㄢˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810",
+    "confidence": "high"
+  },
+  {
+    "id": "028-5",
+    "text": "君子義以為質，禮以行之，孫以出之，信以成之",
+    "spoken": "君子義以為質，禮以行之，遜以出之，信以成之",
+    "reason": "「孫」表謙卑恭順，讀 ㄒㄩㄣˋ；用「遜」引導，不更改展示文字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7460",
+    "confidence": "high"
+  },
+  {
+    "id": "033-2",
+    "text": "讀書百遍，其義自見。",
+    "spoken": "讀書百遍，其義自現。",
+    "reason": "「見」意為文義自行顯現，同「現」，讀 ㄒㄧㄢˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810",
+    "confidence": "high"
+  },
+  {
+    "id": "036-1",
+    "text": "吾生也有涯，而知也無涯。",
+    "spoken": "吾生也有涯，而知也無涯。",
+    "reason": "此處「知」涉及學問、認知與智慧的解釋；辭典將「識見、學問」列 ㄓ、「智慧」列 ㄓˋ，尚未取得本句的權威逐字音注。保留原合成文字，不逕改「智」。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "needs-listening"
+  },
+  {
+    "id": "046-5",
+    "text": "成己，仁也；成物，知也",
+    "spoken": "成己，仁也；成物，智也",
+    "reason": "「成物，知也」與仁相對，指智慧之德；依「知」同「智」義讀 ㄓˋ。此處為語境判讀。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "055-3",
+    "text": "君子博學而日參省乎己，則知明而行無過矣。",
+    "spoken": "君子博學而日參省乎己，則智明而行無過矣。",
+    "reason": "「知明」指智慧明達，知同「智」，讀 ㄓˋ；「參省」仍保留原字，需另依教材讀法驗聽。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "059-1",
+    "text": "知者不惑，仁者不憂，勇者不懼。",
+    "spoken": "智者不惑，仁者不憂，勇者不懼。",
+    "reason": "教育部「知者不惑」詞條直接標注 ㄓˋ ㄓㄜˇ ㄅㄨˋ ㄏㄨㄛˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=114426",
+    "confidence": "high"
+  },
+  {
+    "id": "061-5",
+    "text": "日知其所亡，月無忘其所能。",
+    "spoken": "日知其所無，月無忘其所能。",
+    "reason": "「亡」意為尚未具有的學問，同「無」，讀 ㄨˊ；不可套用到死亡、逃亡等「亡」。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11548",
+    "confidence": "high"
+  },
+  {
+    "id": "065-2",
+    "text": "莫春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+    "spoken": "暮春者，春服既成，冠者五六人，童子六七人，浴乎沂，風乎舞雩，詠而歸。",
+    "reason": "「莫春」通「暮春」，教育部「莫」詞條直接引用此句，讀 ㄇㄨˋ。「風乎舞雩」另需驗聽吹風義 ㄈㄥˋ，未在本筆覆寫。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1085",
+    "confidence": "high"
+  },
+  {
+    "id": "094-2",
+    "text": "一貧一富，乃知交態；一貴一賤，交情乃見。",
+    "spoken": "一貧一富，乃知交態；一貴一賤，交情乃現。",
+    "reason": "「交情乃見」指交情顯現，見同「現」，讀 ㄒㄧㄢˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810",
+    "confidence": "high"
+  },
+  {
+    "id": "112-1",
+    "text": "人生不相見，動如參與商。",
+    "spoken": "人生不相見，動如申與商。",
+    "reason": "此處「參」是星宿名，教育部「參商」讀 ㄕㄣ ㄕㄤ；以同音「申」引導，避免誤分詞為「參與」。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=131335",
+    "confidence": "high"
+  },
+  {
+    "id": "126-5",
+    "text": "暮春者，春服既成，浴乎沂，風乎舞雩，詠而歸。",
+    "spoken": "暮春者，春服既成，浴乎沂，風乎舞雩，詠而歸。",
+    "reason": "「風乎舞雩」的風是吹風義，辭典此義讀 ㄈㄥˋ；舞雩讀 ㄨˇ ㄩˊ。先驗聽，若聲音有誤，再考慮單字音素控制；保留原合成文字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1753",
+    "confidence": "needs-listening"
+  },
+  {
+    "id": "131-2",
+    "text": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且湛。",
+    "spoken": "妻子好合，如鼓瑟琴；兄弟既翕，和樂且丹。",
+    "reason": "「湛」在和樂語境表示快樂，教育部明列 ㄉㄢ 並引用「和樂且湛」；僅以「丹」引導該字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=2007",
+    "confidence": "high"
+  },
+  {
+    "id": "167-1",
+    "text": "客從遠方來，遺我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+    "spoken": "客從遠方來，衛我雙鯉魚。呼兒烹鯉魚，中有尺素書。",
+    "reason": "「遺」在「遺我雙鯉魚」意為贈送，讀 ㄨㄟˋ；以單音字「衛」引導，不把其他「遺」全域替換。",
+    "source": "https://pedia.cloud.edu.tw/Entry/Detail/?title=%E9%81%BA",
+    "confidence": "high"
+  },
+  {
+    "id": "168-5",
+    "text": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周行。",
+    "spoken": "采采卷耳，不盈頃筐。嗟我懷人，寘彼周航。",
+    "reason": "教育部「周行」大道義讀 ㄓㄡ ㄏㄤˊ，且直接引用「寘彼周行」；以「航」引導末字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=115747",
+    "confidence": "high"
+  },
+  {
+    "id": "169-4",
+    "text": "愛而不見，搔首踟躕。",
+    "spoken": "愛而不現，搔首踟躕。",
+    "reason": "此句女子隱藏而不顯現，「見」為顯現義，讀 ㄒㄧㄢˋ；「踟躕」依現有字形讀 ㄔˊ ㄔㄨˊ，不改成「踟躅」。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810",
+    "confidence": "high"
+  },
+  {
+    "id": "170-5",
+    "text": "習習谷風，以陰以雨。黽勉同心，不宜有怒。",
+    "spoken": "習習谷風，以陰以雨。黽勉同心，不宜有怒。",
+    "reason": "「以陰以雨」涉及「雨」動詞義，辭典動詞讀 ㄩˋ；仍需對照完整詩義與實際輸出後確認，暫不使用玉等同音替字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686",
+    "confidence": "needs-listening"
+  },
+  {
+    "id": "182-3",
+    "text": "昔我往矣，楊柳依依；今我來思，雨雪霏霏。",
+    "spoken": "昔我往矣，楊柳依依；今我來思，玉雪霏霏。",
+    "reason": "「雨雪」為降雪，雨作動詞讀 ㄩˋ；以「玉」引導，不改「雪」或其他雨字。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11686",
+    "confidence": "high"
+  },
+  {
+    "id": "244-3",
+    "text": "獨樂樂不如眾樂樂。",
+    "spoken": "獨悅樂不如眾悅樂。",
+    "reason": "教育部「獨樂樂」讀 ㄉㄨˊ ㄩㄝˋ ㄌㄜˋ；每組前一個樂是音樂，後一個樂是快樂，以「悅樂」引導 ㄩㄝˋ ㄌㄜˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47432",
+    "confidence": "high"
+  },
+  {
+    "id": "276-3",
+    "text": "儉，德之共也；侈，惡之大也。",
+    "spoken": "儉，德之共也；侈，惡之大也。",
+    "reason": "「德之共」的「共」須先依本句訓詁判斷，不能僅因字典另有通供、通恭的 ㄍㄨㄥ 音便套用。暫保留原文字與引擎讀音。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=4386",
+    "confidence": "needs-listening"
+  },
+  {
+    "id": "287-1",
+    "text": "良農不為水旱不耕，良賈不為折閱不市。",
+    "spoken": "良農不為水旱不耕，良谷不為折閱不市。",
+    "reason": "「賈」指商人，讀 ㄍㄨˇ；「良賈」的讀音可由教育部「良賈深藏若虛」詞條核對。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=64874",
+    "confidence": "high"
+  },
+  {
+    "id": "290-5",
+    "text": "多言數窮，不如守中。",
+    "spoken": "多言朔窮，不如守中。",
+    "reason": "教育部「多言數窮」直接標注 ㄕㄨㄛˋ；此數為屢次義，以同音「朔」引導。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=47875",
+    "confidence": "high"
+  },
+  {
+    "id": "296-1",
+    "text": "見利思義，見危授命，久要不忘平生之言。",
+    "spoken": "見利思義，見危授命，久邀不忘平生之言。",
+    "reason": "教育部「久要」讀 ㄐㄧㄡˇ ㄧㄠ，指舊約、舊交；以「邀」引導要的一聲。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=92194",
+    "confidence": "high"
+  },
+  {
+    "id": "317-3",
+    "text": "里仁為美。擇不處仁，焉得知？",
+    "spoken": "里仁為美。擇不處仁，焉得智？",
+    "reason": "教育部「知」智慧義直接引用此句，知同「智」，讀 ㄓˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "319-2",
+    "text": "知之為知之，不知為不知，是知也。",
+    "spoken": "知之為知之，不知為不知，是智也。",
+    "reason": "只有末尾「是知也」的知表示智慧，讀 ㄓˋ；前面的知均表示知道，維持 ㄓ，不能整句全換。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "333-1",
+    "text": "人之有德慧術知者，恆存乎疢疾。",
+    "spoken": "人之有德慧術智者，恆存乎疢疾。",
+    "reason": "「德慧術知」的知表示智慧，通「智」，讀 ㄓˋ；這是依詞義作的語境限定判讀。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "336-1",
+    "text": "好學近乎知，力行近乎仁，知恥近乎勇。",
+    "spoken": "好學近乎智，力行近乎仁，知恥近乎勇。",
+    "reason": "只有「好學近乎知」的知是智慧之德，讀 ㄓˋ；後面「知恥」仍讀 ㄓ，不替換。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=7499",
+    "confidence": "high"
+  },
+  {
+    "id": "336-2",
+    "text": "暴虎馮河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+    "spoken": "暴虎憑河，死而無悔者，吾不與也；必也臨事而懼，好謀而成者也。",
+    "reason": "教育部「暴虎馮河」標注 ㄆㄧㄥˊ；以同音「憑」避免讀成姓氏的 ㄈㄥˊ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=16322",
+    "confidence": "high"
+  },
+  {
+    "id": "342-3",
+    "text": "有為者辟若掘井，掘井九軔而不及泉，猶為棄井也。",
+    "spoken": "有為者譬若掘井，掘井九軔而不及泉，猶為棄井也。",
+    "reason": "「辟若」是譬如，辟通「譬」，讀 ㄆㄧˋ；只引導該詞。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=408",
+    "confidence": "high"
+  },
+  {
+    "id": "343-4",
+    "text": "卒然臨之而不驚，無故加之而不怒。",
+    "spoken": "猝然臨之而不驚，無故加之而不怒。",
+    "reason": "教育部「卒然」直接引用〈留侯論〉本句，讀 ㄘㄨˋ ㄖㄢˊ；以「猝然」引導，避免讀 ㄗㄨˊ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=142217",
+    "confidence": "high"
+  },
+  {
+    "id": "347-5",
+    "text": "行拂亂其所為，所以動心忍性，曾益其所不能。",
+    "spoken": "行拂亂其所為，所以動心忍性，增益其所不能。",
+    "reason": "教育部「曾益」讀 ㄗㄥ ㄧˋ，並列「增益」異寫；不可把句中曾讀成曾經的 ㄘㄥˊ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=139084",
+    "confidence": "high"
+  },
+  {
+    "id": "354-3",
+    "text": "時窮節乃見，一一垂丹青。",
+    "spoken": "時窮節乃現，一一垂丹青。",
+    "reason": "「節乃見」指節操顯現，見同「現」，讀 ㄒㄧㄢˋ。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=5810",
+    "confidence": "high"
+  },
+  {
+    "id": "355-5",
+    "text": "舜發於畎畝之中，傅說舉於版築之間，膠鬲舉於魚鹽之中。",
+    "spoken": "舜發於畎畝之中，傅悅舉於版築之間，膠鬲舉於魚鹽之中。",
+    "reason": "人名「傅說」教育部標注 ㄈㄨˋ ㄩㄝˋ，以「悅」引導；其他人名未在本筆連帶改寫。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=39474",
+    "confidence": "high"
+  },
+  {
+    "id": "362-3",
+    "text": "一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂。",
+    "spoken": "一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂。",
+    "reason": "教育部「簞食」詞條標 ㄉㄢ ㄙˋ，但「簞食瓢飲」詞條（ID=43902）標 ㄉㄢ ㄕˊ ㄆㄧㄠˊ ㄧㄣˇ，兩者均引用顏回此句。需人工決定教材採音並驗聽，暫不自動換成「飼」。",
+    "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=43901",
+    "confidence": "needs-listening"
+  }
+]
